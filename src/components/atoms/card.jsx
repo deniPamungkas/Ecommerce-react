@@ -3,20 +3,20 @@ import { discPrice } from "../../utils/discount";
 
 const Card = (props) => {
   return (
-    <div className="md:w-[175px] md:h-[270px] lg:w-[235px] lg:h-[350px] xl:w-[285px] xl:h-[446px] shrink-0 relative">
+    <div className="w-[175px] h-[270px] lg:w-[235px] lg:h-[350px] xl:w-[285px] xl:h-[446px] shrink-0 relative">
       <img
         src={props.data.img}
         alt="jnnjnjn"
         className="w-full h-2/3 bg-red-700"
       />
-      <div className="w-full h-1/3 bg-cardbg lg:px-3 lg:py-2 md:px-2 md:py-1">
-        <h1 className="xl:text-2xl md:text-base lg:text-xl font-bold xl:mb-3 lg:mb-1">
+      <div className="w-full h-1/3 bg-cardbg lg:px-3 lg:py-2 px-2 py-1">
+        <h1 className="xl:text-2xl text-sm lg:text-xl font-bold xl:mb-3 lg:mb-1">
           {props.data.name}
         </h1>
-        <p className="xl:mb-3 lg:mb-1 lg:text-base md:text-xs">
+        <p className="xl:mb-3 lg:mb-1 lg:text-base text-xs">
           {props.data.desc}
         </p>
-        <span className="lg:text-base xl:text-lg md:text-xs font-bold">
+        <span className="lg:text-base xl:text-lg text-xs font-bold">
           {props.data.disc
             ? `Rp.${new Intl.NumberFormat("en-US").format(
                 discPrice(props.data.disc, props.data.price)
