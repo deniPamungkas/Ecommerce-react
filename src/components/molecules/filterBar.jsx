@@ -8,7 +8,7 @@ const FilterBar = () => {
     <div className="w-full h-[60px] xl:h-[80px] bg-filter px-3 md:px-16">
       <div className="flex h-full items-center justify-between">
         <div className="flex gap-x-4 items-center">
-          <span className="flex gap-x-1 items-center">
+          <span className="flex gap-x-2 items-center">
             <img src={filter} alt="icon" className="w-4 h-4 inline" />
             <span className="text-sm font-semibold">Filter</span>
           </span>
@@ -21,7 +21,11 @@ const FilterBar = () => {
           <label htmlFor="shortBy" className="font-semibold text-sm">
             Short By
           </label>
-          <select name="shortBy" id="shortBy" className="h-7 outline-none px-1">
+          <select
+            name="shortBy"
+            id="shortBy"
+            className="h-7 outline-none px-1 bg-white"
+          >
             <option value="">--short by--</option>
             <option value="price">Price</option>
             <option value="newest">Newest</option>
