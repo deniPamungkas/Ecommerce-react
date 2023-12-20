@@ -1,7 +1,7 @@
 import filter from "../../assets/icons/filter.png";
 import grid from "../../assets/icons/grid.png";
 import sequence from "../../assets/icons/sequence.png";
-import line from "../../assets/icons/Line.png";
+import line from "../../assets/icons/line.png";
 
 const FilterBar = () => {
   return (
