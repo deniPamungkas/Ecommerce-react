@@ -19,10 +19,12 @@ export const navLinks = [
   {
     id: "home",
     title: "Home",
+    dest: "/",
   },
   {
     id: "shop",
     title: "Shop",
+    dest: "/shop",
   },
   {
     id: "about",

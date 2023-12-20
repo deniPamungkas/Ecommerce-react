@@ -22,8 +22,8 @@ const Footer = () => {
             <div className="w-full md:w-1/2 h-full flex justify-start gap-x-10 md:gap-x-0 md:justify-between text-xl font-semibold">
               <ul className="flex flex-col gap-y-3 xl:gap-y-10">
                 <li className="text-gray-500">Links</li>
-                <li>Home</li>
-                <li>Shop</li>
+                <Link to={"/"}>Home</Link>
+                <Link to={"/shop"}>Shop</Link>
                 <li>About</li>
                 <li>Contact</li>
               </ul>

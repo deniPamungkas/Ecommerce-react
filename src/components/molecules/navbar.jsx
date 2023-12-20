@@ -13,7 +13,11 @@ const Navbar = () => {
       </Link>
       <ul className="sm:flex hidden sm:w-[200px] lg:w-[400px] md:w-[250px] justify-around font-semibold">
         {navLinks.map((item) => {
-          return <li key={item.id}>{item.title}</li>;
+          return (
+            <Link to={item.dest} key={item.id}>
+              {item.title}
+            </Link>
+          );
         })}
       </ul>
       <ul className="md:flex hidden lg:w-[200px] md:w-[150px] justify-between font-semibold">
