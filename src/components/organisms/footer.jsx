@@ -18,8 +18,8 @@ const Footer = () => {
             <p>Gables,</p>
             <p>FL 33134 USA</p>
           </div>
-          <div className="h-full w-full text-xs md:text-base xl:w-3/5 block md:flex mt-8 xl:mt-0">
-            <div className="w-full md:w-1/2 h-full flex justify-start gap-x-10 md:gap-x-0 md:justify-between text-xl font-semibold">
+          <div className="h-full w-full text-xs md:text-xl xl:w-3/5 block md:flex mt-8 xl:mt-0">
+            <div className="w-full md:w-1/2 h-full flex justify-start gap-x-10 md:gap-x-0 md:justify-between font-semibold">
               <ul className="flex flex-col gap-y-3 xl:gap-y-10">
                 <li className="text-gray-500">Links</li>
                 <Link to={"/"}>Home</Link>
@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
             <div className=" h-full w-full md:w-1/2 font-semibold flex justify-start mt-8 md:mt-0 md:justify-end">
               <div className="flex flex-col gap-y-3 xl:gap-y-10">
-                <span className="text-gray-500 text-xl">Newsletter</span>
+                <span className="text-gray-500">Newsletter</span>
                 <form className="flex gap-x-2">
                   <input
                     type="text"
