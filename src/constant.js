@@ -10,6 +10,10 @@ import muggo from "../src/assets/images/muggo.png";
 import pinky from "../src/assets/images/Syltherine.png";
 import potty from "../src/assets/images/potty.png";
 import respira from "../src/assets/images/respira.png";
+import trophy from "../src/assets/icons/trophy.png";
+import warranty from "../src/assets/icons/warranty.png";
+import shipping from "../src/assets/icons/shipping.png";
+import customer from "../src/assets/icons/customer.png";
 
 export const navLinks = [
   {
@@ -142,4 +146,11 @@ export const products = [
   //     price: 3500000,
   //     desc: "Stylish cafe chair",
   //   },
+];
+
+export const offer = [
+  { name: "High Quality", desc: "Crafted from top materials", icon: trophy },
+  { name: "Warranty Protection", desc: "Over 2 years", icon: warranty },
+  { name: "Free Shipping", desc: "Order over $150", icon: shipping },
+  { name: "24/7 Support", desc: "Dedicated support", icon: customer },
 ];

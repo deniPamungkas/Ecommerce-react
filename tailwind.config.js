@@ -10,6 +10,7 @@ export default {
         colorDisc: "#E97171",
         colorNew: "#2EC1AC",
         ins: "#FCF8F3",
+        filter: "#F9F1E7",
       },
     },
   },

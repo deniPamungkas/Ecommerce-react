@@ -15,13 +15,11 @@ const Range = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row gap-y-7 justify-between">
+        <div className="flex flex-col md:flex-row gap-x-2 gap-y-7 justify-between">
           <div>
             <Frame
               src={living}
-              className={
-                "object-contain rounded-lg md:w-[200px] md:h-[260px] lg:w-[280px] lg:h-[380px] xl:w-[380px] xl:h-[480px]"
-              }
+              className={"object-contain rounded-lg flex-1"}
             />
             <p className="text-center text-base font-bold xl:text-xl mt-2 md:mt-1 lg:mt-2">
               Dining
@@ -30,9 +28,7 @@ const Range = () => {
           <div>
             <Frame
               src={dining}
-              className={
-                "object-contain rounded-lg md:w-[200px] md:h-[260px] lg:w-[280px] lg:h-[380px] xl:w-[380px] xl:h-[480px]"
-              }
+              className={"object-contain rounded-lg flex-1"}
             />
             <p className="text-center text-base font-bold xl:text-xl mt-2 md:mt-1 lg:mt-2">
               Living
@@ -41,9 +37,7 @@ const Range = () => {
           <div>
             <Frame
               src={bedroom}
-              className={
-                "object-contain rounded-lg md:w-[200px] md:h-[260px] lg:w-[280px] lg:h-[380px] xl:w-[380px] xl:h-[480px]"
-              }
+              className={"object-contain rounded-lg flex-1"}
             />
             <p className="text-center text-base font-bold xl:text-xl mt-2 md:mt-1 lg:mt-2">
               Bedroom

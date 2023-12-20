@@ -3,7 +3,7 @@ import { discPrice } from "../../utils/discount";
 
 const Card = (props) => {
   return (
-    <div className="w-[175px] h-[270px] lg:w-[235px] lg:h-[350px] xl:w-[285px] xl:h-[446px] shrink-0 relative">
+    <div className="flex-1 min-w-[125px] md:min-w-[150px] lg:min-w-[175px] xl:min-w-[275px] shrink-0 relative">
       <img
         src={props.data.img}
         alt="jnnjnjn"
