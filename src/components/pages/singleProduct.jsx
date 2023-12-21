@@ -12,6 +12,7 @@ import muggo from "../../assets/images/muggo.png";
 import pinky from "../../assets/images/Syltherine.png";
 import potty from "../../assets/images/potty.png";
 import respira from "../../assets/images/respira.png";
+import Carousel from "../atoms/carousel";
 
 const SingleProduct = () => {
   const [desc, setDesc] = useState({ active: "Description" });
@@ -239,6 +240,7 @@ const SingleProduct = () => {
           )}
         </div>
       </div>
+      {/* <Carousel /> */}
       <RelatedProducts />
     </section>
   );

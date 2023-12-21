@@ -5,7 +5,9 @@ import Button from "../atoms/button";
 const RelatedProducts = () => {
   return (
     <section className="px-3 md:px-16 w-full h-fit py-12">
-      <h1 className="font-bold text-3xl text-center mb-7">Related Products</h1>
+      <h1 className="font-bold text-xl md:text-2xl lg:text-3xl text-center mb-7">
+        Related Products
+      </h1>
       <ul className="w-full flex flex-wrap gap-4">
         {products.map((item) => {
           return <Card key={item.id} data={item} />;
