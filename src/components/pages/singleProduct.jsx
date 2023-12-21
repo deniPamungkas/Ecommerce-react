@@ -4,6 +4,14 @@ import Button from "../atoms/button";
 import CountBtn from "../atoms/countBtn";
 import RelatedProducts from "../organisms/relatedProducts";
 import { useState } from "react";
+import syltherine from "../../assets/images/Syltherine.png";
+import grifo from "../../assets/images/grifo.png";
+import leviosa from "../../assets/images/leviosa.png";
+import lolito from "../../assets/images/lolito.png";
+import muggo from "../../assets/images/muggo.png";
+import pinky from "../../assets/images/Syltherine.png";
+import potty from "../../assets/images/potty.png";
+import respira from "../../assets/images/respira.png";
 
 const SingleProduct = () => {
   const [desc, setDesc] = useState({ active: "Description" });
@@ -13,8 +21,14 @@ const SingleProduct = () => {
   return (
     <section>
       <div className="w-full h-[60px] xl:h-[70px] bg-filter px-3 md:px-16"></div>
-      <div className=" w-full h-fit px-3 md:px-16 py-5 md:flex gap-5 lg:gap-x-8 xl:gap-x-14 border-b-2 md:py-12">
-        <div className="w-full md:w-1/2 h-[300px] bg-teal-400"></div>
+      <div className=" w-full h-fit px-3 md:px-16 md:flex gap-5 lg:gap-x-8 xl:gap-x-14 border-b-2 py-8 md:py-12">
+        <div className="w-full md:w-1/2 h-[300px] bg-black/25 flex justify-center">
+          <img
+            src={syltherine}
+            alt="product-image"
+            className="object-contain"
+          />
+        </div>
         <div className="w-full md:w-1/2 h-full md:pr-8 mt-3 md:mt-0 flex flex-col gap-y-3">
           <h1 className="text-3xl lg:text-5xl font-semibold">Asgaard Sofa</h1>
           <p className="text-xl lg:text-3xl font-semibold">Rp. 2.500.000</p>
@@ -39,7 +53,7 @@ const SingleProduct = () => {
                 value={"L"}
               />
               <label htmlFor="L">
-                <div className="w-6 h-6 md:w-7 md:h-7 text-xs lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
+                <div className="w-6 h-6 md:w-7 md:h-7 text-[10px] lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
                   L
                 </div>
               </label>
@@ -51,7 +65,7 @@ const SingleProduct = () => {
                 value={"XL"}
               />
               <label htmlFor="XL">
-                <div className="w-6 h-6 md:w-7 md:h-7 text-xs lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
+                <div className="w-6 h-6 md:w-7 md:h-7 text-[10px] lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
                   XL
                 </div>
               </label>
@@ -63,7 +77,7 @@ const SingleProduct = () => {
                 value={"XS"}
               />
               <label htmlFor="XS">
-                <div className="w-6 h-6 md:w-7 md:h-7 text-xs lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
+                <div className="w-6 h-6 md:w-7 md:h-7 text-[10px] lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
                   XS
                 </div>
               </label>
@@ -106,14 +120,14 @@ const SingleProduct = () => {
           </div>
           <div className="w-full items-center flex gap-x-3 mt-10">
             <CountBtn />
-            <Button className="border-2 border-black px-6 h-[50px] rounded-lg font-semibold">
+            <Button className="border-2 border-black px-4 h-[40px] text-xs md:text-base md:px-6 md:h-[50px] rounded-lg font-semibold">
               Add to cart
             </Button>
           </div>
         </div>
       </div>
-      <div className="w-full h-fit gap-y-10 flex flex-col items-center md:px-24 xl:px-52 md:py-12 text-gray-500 border-b-2">
-        <ul className="flex gap-x-10 md:text-lg xl:text-xl">
+      <div className="w-full h-fit gap-y-10 flex flex-col items-center px-8 md:px-24 xl:px-52 py-8 md:py-12 text-gray-500 border-b-2">
+        <ul className="flex gap-x-3 md:gap-x-10 text-xs md:text-lg xl:text-xl">
           <li>
             <input
               type="radio"
@@ -174,7 +188,7 @@ const SingleProduct = () => {
         </ul>
         <div className="w-full ">
           {desc.active == "Description" && (
-            <p className=" text-justify">
+            <p className=" text-justify text-xs">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
               architecto debitis! Ullam quo tempora, ratione enim odio at
               tempore minima aliquam commodi error similique iure eligendi
@@ -197,7 +211,7 @@ const SingleProduct = () => {
             </p>
           )}
           {desc.active == "Additional-information" && (
-            <p className=" text-justify">
+            <p className=" text-justify text-xs">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
               architecto debitis! Ullam quo tempora, ratione enim odio at
               tempore minima aliquam commodi error similique iure eligendi
@@ -215,7 +229,7 @@ const SingleProduct = () => {
             </p>
           )}
           {desc.active == "Reviews" && (
-            <p className=" text-justify">
+            <p className=" text-justify text-xs">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
               architecto debitis! Ullamolor, sit amet consectetur adipisicing
               elit. Doloribus nisi mollitia magnam odio repellat numquam. Saepe,

@@ -67,6 +67,7 @@ export const products = [
     disc: "30",
     price: 3500000,
     new: false,
+    category: "chair",
     desc: "Stylish cafe chair",
   },
   {
@@ -76,6 +77,7 @@ export const products = [
     disc: null,
     price: 2500000,
     new: false,
+    category: "chair",
     desc: "Stylish cafe chair",
   },
   {
@@ -85,6 +87,7 @@ export const products = [
     disc: "50",
     price: 14000000,
     new: false,
+    category: "sofa",
     desc: "Luxury big sofa",
   },
   {
@@ -94,6 +97,7 @@ export const products = [
     disc: null,
     price: 500000,
     new: true,
+    category: "sofa",
     desc: "Outdoor bar table and stool",
   },
   {
@@ -103,6 +107,7 @@ export const products = [
     disc: null,
     price: 1500000,
     new: false,
+    category: "lamp",
     desc: "Night Lamp",
   },
   {
@@ -112,6 +117,7 @@ export const products = [
     disc: null,
     price: 150000,
     new: true,
+    category: "sofa",
     desc: "Small mug",
   },
   {
@@ -121,6 +127,7 @@ export const products = [
     disc: "50",
     price: 14000000,
     new: false,
+    category: "bed",
     desc: "Cute bed set",
   },
   {
@@ -130,6 +137,7 @@ export const products = [
     disc: null,
     price: 500000,
     new: true,
+    category: "sofa",
     desc: "Minimalist small pot",
   },
   //   {
