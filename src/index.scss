@@ -1,0 +1,14 @@
+.choose-size {
+  input[type="radio"]:checked + label {
+    div {
+      background-color: #b88e2f;
+    }
+  }
+}
+.choose-color {
+  input[type="radio"]:checked + label {
+    div {
+      border: 2px solid black;
+    }
+  }
+}

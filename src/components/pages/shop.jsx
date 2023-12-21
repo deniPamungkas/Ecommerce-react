@@ -1,3 +1,4 @@
+import { Pagination } from "@mui/material";
 import bg from "../../assets/images/bgShop1.jpg";
 import { products } from "../../constant";
 import Card from "../atoms/card";
@@ -26,6 +27,14 @@ const Shop = () => {
           return <Card key={item.id} data={item} />;
         })}
       </ul>
+      <div className="w-full flex justify-center items-center mt-5 md:mt-0 mb-10">
+        <Pagination
+          count={10}
+          variant="outlined"
+          shape="rounded"
+          className="m-auto text-center"
+        />
+      </div>
       <OfferBar />
     </section>
   );

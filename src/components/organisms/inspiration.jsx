@@ -30,7 +30,7 @@ const Inspiration = () => {
         </Button>
       </div>
       <div className=" w-3/5 h-full relative">
-        <Slider className="w-4/5 h-full" {...settings}>
+        {/* <Slider className="w-4/5 h-full" {...settings}>
           <div className="h-[500px] bg-orange-400">
             <h3>1</h3>
           </div>
@@ -49,7 +49,7 @@ const Inspiration = () => {
           <div className="h-[500px] bg-purple-400">
             <h3>6</h3>
           </div>
-        </Slider>
+        </Slider> */}
       </div>
     </section>
   );
