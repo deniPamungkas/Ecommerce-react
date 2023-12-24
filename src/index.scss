@@ -13,6 +13,15 @@
   }
 }
 
+.choose-payment {
+  input[type="radio"]:checked + label {
+    color: black;
+    p {
+      color: black;
+    }
+  }
+}
+
 th,
 td {
   text-align: start;

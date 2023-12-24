@@ -19,9 +19,10 @@ const Cart = () => {
           <p className="text-center font-semibold z-20 text-white">{`home > cart`}</p>
         </div>
       </div>
-      <div className="w-full h-fit block px-3 md:px-7 lg:flex lg:gap-x-5 xl:gap-x-10 lg:px-10 xl:px-16 md:py-7 xl:py-14">
-        <div className="lg:w-3/4 xl:w-2/3 h-full mb-10 lg:mb-0">
-          <table className="table-auto w-full">
+      <div className="w-full h-fit flex-col px-3 md:px-7 lg:flex lg:flex-row lg:gap-x-5 xl:gap-x-10 lg:px-10 xl:px-16 py-3 md:py-7 xl:py-14">
+        <div className="lg:w-3/4 xl:w-2/3 h-full mb-2 lg:mb-0">
+          <div className="md:hidden w-full h-[300px] bg-teal-100"></div>
+          <table className="hidden md:table table-auto w-full">
             <thead className="">
               <tr className="h-[50px] bg-filter text-start">
                 <th></th>
