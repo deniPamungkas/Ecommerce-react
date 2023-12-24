@@ -14,7 +14,7 @@ const Inspiration = () => {
   };
   return (
     <section className="flex w-full h-[600px] py-10 bg-ins relative">
-      <div className="w-2/5 h-full pl-16 pr-10 flex flex-col justify-center gap-y-5">
+      <div className="w-full h-full pl-3 md:pl-16 pr-10 flex flex-col justify-center gap-y-5">
         <h1 className="text-5xl font-bold">50+ Beautiful Room Inspirations</h1>
         <p className=" leading-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
@@ -29,8 +29,8 @@ const Inspiration = () => {
           Explore More
         </Button>
       </div>
-      <div className=" w-3/5 h-full relative">
-        {/* <Slider className="w-4/5 h-full" {...settings}>
+      {/* <div className=" w-3/5 h-full relative">
+        <Slider className="w-4/5 h-full" {...settings}>
           <div className="h-[500px] bg-orange-400">
             <h3>1</h3>
           </div>
@@ -49,8 +49,8 @@ const Inspiration = () => {
           <div className="h-[500px] bg-purple-400">
             <h3>6</h3>
           </div>
-        </Slider> */}
-      </div>
+        </Slider>
+      </div> */}
     </section>
   );
 };

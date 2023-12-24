@@ -8,6 +8,7 @@ const Home = () => {
     <section>
       <Header />
       <Range />
+      <hr />
       <OurProducts />
       <Inspiration />
     </section>
