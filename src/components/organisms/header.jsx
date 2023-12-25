@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import background from "../../assets/images/scandinavian-interior-mockup-wall-decal-background 1.png";
 import Button from "../atoms/button";
 
@@ -24,9 +25,11 @@ const Header = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
             maiores quod libero corporis minima nam vitae similique blanditiis.
           </p>
-          <Button className="px-10 py-3 md:px-5 md:text-[9px] xl:px-20 xl:text-lg lg:px-7 lg:py-3 lg:text-xs font-semibold xl:py-5 bg-primary text-white md:py-2 absolute bottom-5 xl:bottom-10">
-            BUY NOW
-          </Button>
+          <Link to={"/shop"}>
+            <Button className="px-10 py-3 md:px-5 md:text-[9px] xl:px-20 xl:text-lg lg:px-7 lg:py-3 lg:text-xs font-semibold xl:py-5 bg-primary text-white md:py-2 absolute bottom-5 xl:bottom-10">
+              BUY NOW
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -2,8 +2,24 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo/Meubel-House-Logos-05.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks, navMenu } from "../../constant";
+import { useState } from "react";
 
 const Navbar = () => {
+  // handle aktif/nonAktif sideMenu
+  const [side, setSide] = useState(false);
+  const handleSide = () => {
+    setSide((cur) => !cur);
+  };
+  // handle scroll off ketika sideMenu aktif
+  const scroll = () => {
+    if (side) return (document.body.style.overflow = "hidden");
+    else document.body.style.overflow = "auto";
+  };
+  scroll();
+  //handle nonAktif sideMenu ketika ukuran layar berubah
+  window.addEventListener("resize", function () {
+    setSide(false);
+  });
   return (
     <nav className="bg-white flex h-[70px] items-center justify-between px-3 md:px-10 z-10">
       <Link to={"/"}>
@@ -29,9 +45,32 @@ const Navbar = () => {
           );
         })}
       </ul>
-      <span className="block md:hidden">
+      <span className="block md:hidden" onClick={handleSide}>
         <MenuIcon />
       </span>
+      <div
+        className={`md:hidden absolute top-0 right-0 bottom-0 left-10 bg-white z-20 ${
+          side ? "" : "hidden"
+        }`}
+      >
+        <div
+          className="w-20 h-20 bg-teal-300 flex justify-center items-center text-3xl"
+          onClick={handleSide}
+        >
+          x
+        </div>
+        <ul className=" w-full h-[350px] mt-24 flex flex-col gap-y-5 px-3">
+          {navLinks.map((item) => {
+            return (
+              <Link to={item.dest} key={item.id}>
+                <li className="flex-1 h-20 bg-orange-300 px-3 rounded-lg flex items-center justify-start text-xl font-semibold">
+                  {item.title}
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+      </div>
     </nav>
   );
 };

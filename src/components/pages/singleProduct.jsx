@@ -5,6 +5,7 @@ import CountBtn from "../atoms/countBtn";
 import RelatedProducts from "../organisms/relatedProducts";
 import { useState } from "react";
 import syltherine from "../../assets/images/Syltherine.png";
+import { products } from "../../constant";
 import grifo from "../../assets/images/grifo.png";
 import leviosa from "../../assets/images/leviosa.png";
 import lolito from "../../assets/images/lolito.png";
@@ -13,12 +14,21 @@ import pinky from "../../assets/images/Syltherine.png";
 import potty from "../../assets/images/potty.png";
 import respira from "../../assets/images/respira.png";
 import Carousel from "../atoms/carousel";
+import { useParams } from "react-router";
 
-const SingleProduct = () => {
+const SingleProduct = (props) => {
+  const par = useParams();
   const [desc, setDesc] = useState({ active: "Description" });
   const handleChange = (e) => {
     setDesc({ active: e.target.id });
   };
+
+  console.log(
+    products.filter((item) => {
+      return item.id == "1";
+    })
+  );
+
   return (
     <section>
       <div className="w-full h-[60px] xl:h-[70px] bg-filter px-3 md:px-16"></div>
