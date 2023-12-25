@@ -1,15 +1,15 @@
 import Card from "../atoms/card";
-import { products } from "../../constant";
 import Button from "../atoms/button";
+import PropTypes from "prop-types";
 
-const RelatedProducts = () => {
+const RelatedProducts = (props) => {
   return (
     <section className="px-3 md:px-16 w-full h-fit py-12">
       <h1 className="font-bold text-xl md:text-2xl lg:text-3xl text-center mb-7">
         Related Products
       </h1>
       <ul className="w-full flex flex-wrap gap-4">
-        {products.map((item) => {
+        {props.data.map((item) => {
           return <Card key={item.id} data={item} />;
         })}
       </ul>
@@ -22,6 +22,13 @@ const RelatedProducts = () => {
       </Button>
     </section>
   );
+};
+
+RelatedProducts.propTypes = {
+  children: PropTypes.any,
+  onClick: PropTypes.any,
+  className: PropTypes.string,
+  data: PropTypes.any,
 };
 
 export default RelatedProducts;

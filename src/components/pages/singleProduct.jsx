@@ -25,9 +25,11 @@ const SingleProduct = (props) => {
 
   console.log(
     products.filter((item) => {
-      return item.id == "1";
+      return item.id === par.id;
     })
   );
+
+  const relatedProducts = products.slice(1, 9);
 
   return (
     <section>
@@ -197,9 +199,9 @@ const SingleProduct = (props) => {
             </label>
           </li>
         </ul>
-        <div className="w-full ">
+        <div className="w-full min-h-[200px]">
           {desc.active == "Description" && (
-            <p className=" text-justify text-xs">
+            <p className=" text-justify text-xs lg:text-sm leading-5 lg:leading-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
               architecto debitis! Ullam quo tempora, ratione enim odio at
               tempore minima aliquam commodi error similique iure eligendi
@@ -222,7 +224,7 @@ const SingleProduct = (props) => {
             </p>
           )}
           {desc.active == "Additional-information" && (
-            <p className=" text-justify text-xs">
+            <p className=" text-justify text-xs lg:text-sm leading-5 lg:leading-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
               architecto debitis! Ullam quo tempora, ratione enim odio at
               tempore minima aliquam commodi error similique iure eligendi
@@ -240,7 +242,7 @@ const SingleProduct = (props) => {
             </p>
           )}
           {desc.active == "Reviews" && (
-            <p className=" text-justify text-xs">
+            <p className=" text-justify text-xs lg:text-sm leading-5 lg:leading-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
               architecto debitis! Ullamolor, sit amet consectetur adipisicing
               elit. Doloribus nisi mollitia magnam odio repellat numquam. Saepe,
@@ -251,7 +253,7 @@ const SingleProduct = (props) => {
         </div>
       </div>
       {/* <Carousel /> */}
-      <RelatedProducts />
+      <RelatedProducts data={relatedProducts} />
     </section>
   );
 };
