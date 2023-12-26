@@ -11,7 +11,11 @@ const Card = (props) => {
       className="flex-1 min-w-[125px] max-w-[200px] md:min-w-[150px] md:max-w-[225px] lg:min-w-[175px] lg:max-w-[250px] xl:min-w-[275px] xl:max-w-[350px] shrink-0 relative"
       onClick={handleClick}
     >
-      <img src={props.data.img} alt="jnnjnjn" className="w-full h-2/3" />
+      <img
+        src={`/images/${props.data.img}`}
+        alt="jnnjnjn"
+        className="w-full h-2/3"
+      />
       <div className="w-full h-1/3 bg-cardbg lg:px-3 lg:py-2 px-2 py-1">
         <h1 className="xl:text-2xl text-sm lg:text-xl font-bold xl:mb-3 lg:mb-1">
           {props.data.name}

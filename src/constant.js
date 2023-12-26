@@ -1,20 +1,19 @@
-import user from "../src/assets/icons/user.png";
-import wishlist from "../src/assets/icons/wishlist.png";
-import cart from "../src/assets/icons/cart.png";
-import search from "../src/assets/icons/search.png";
-import syltherine from "../src/assets/images/Syltherine.png";
-import grifo from "../src/assets/images/grifo.png";
-import leviosa from "../src/assets/images/leviosa.png";
-import lolito from "../src/assets/images/lolito.png";
-import muggo from "../src/assets/images/muggo.png";
-import pinky from "../src/assets/images/Syltherine.png";
-import potty from "../src/assets/images/potty.png";
-import respira from "../src/assets/images/respira.png";
-import trophy from "../src/assets/icons/trophy.png";
-import warranty from "../src/assets/icons/warranty.png";
-import shipping from "../src/assets/icons/shipping.png";
-import customer from "../src/assets/icons/customer.png";
-import { v4 as uuidv4 } from "uuid";
+const user = "user.png";
+const wishlist = "wishlist.png";
+const cart = "cart.png";
+const search = "search.png";
+const syltherine = "Syltherine.png";
+const grifo = "grifo.png";
+const leviosa = "leviosa.png";
+const lolito = "lolito.png";
+const muggo = "muggo.png";
+const pinky = "Syltherine.png";
+const potty = "potty.png";
+const respira = "respira.png";
+const trophy = "trophy.png";
+const warranty = "warranty.png";
+const shipping = "shipping.png";
+const customer = "customer.png";
 
 export const navLinks = [
   {
@@ -62,7 +61,7 @@ export const navMenu = [
 
 export const products = [
   {
-    id: uuidv4(),
+    id: "1",
     name: "Syltherine",
     img: syltherine,
     disc: "100",
@@ -73,7 +72,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "2",
     name: "Leviosa",
     img: leviosa,
     disc: "100",
@@ -84,7 +83,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "3",
     name: "Lolito",
     img: lolito,
     disc: "50",
@@ -95,7 +94,7 @@ export const products = [
     desc: "Luxury big sofa",
   },
   {
-    id: uuidv4(),
+    id: "4",
     name: "Respira",
     img: respira,
     disc: "100",
@@ -106,7 +105,7 @@ export const products = [
     desc: "Outdoor bar table and stool",
   },
   {
-    id: uuidv4(),
+    id: "5",
     name: "Grifo",
     img: grifo,
     disc: "100",
@@ -117,7 +116,7 @@ export const products = [
     desc: "Night Lamp",
   },
   {
-    id: uuidv4(),
+    id: "6",
     name: "Muggo",
     img: muggo,
     disc: "100",
@@ -128,7 +127,7 @@ export const products = [
     desc: "Small mug",
   },
   {
-    id: uuidv4(),
+    id: "7",
     name: "Pinky",
     img: pinky,
     disc: "50",
@@ -139,7 +138,7 @@ export const products = [
     desc: "Cute bed set",
   },
   {
-    id: uuidv4(),
+    id: "8",
     name: "Potty",
     img: potty,
     disc: "100",
@@ -150,7 +149,7 @@ export const products = [
     desc: "Minimalist small pot",
   },
   {
-    id: uuidv4(),
+    id: "9",
     name: "Syltherine",
     img: syltherine,
     disc: "100",
@@ -161,7 +160,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "10",
     name: "Leviosa",
     img: leviosa,
     disc: "100",
@@ -172,7 +171,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "11",
     name: "Lolito",
     img: lolito,
     disc: "50",
@@ -183,7 +182,7 @@ export const products = [
     desc: "Luxury big sofa",
   },
   {
-    id: uuidv4(),
+    id: "12",
     name: "Respira",
     img: respira,
     disc: "100",
@@ -194,7 +193,7 @@ export const products = [
     desc: "Outdoor bar table and stool",
   },
   {
-    id: uuidv4(),
+    id: "13",
     name: "Grifo",
     img: grifo,
     disc: "100",
@@ -205,7 +204,7 @@ export const products = [
     desc: "Night Lamp",
   },
   {
-    id: uuidv4(),
+    id: "14",
     name: "Muggo",
     img: muggo,
     disc: "100",
@@ -216,7 +215,7 @@ export const products = [
     desc: "Small mug",
   },
   {
-    id: uuidv4(),
+    id: "15",
     name: "Pinky",
     img: pinky,
     disc: "50",
@@ -227,7 +226,7 @@ export const products = [
     desc: "Cute bed set",
   },
   {
-    id: uuidv4(),
+    id: "16",
     name: "Potty",
     img: potty,
     disc: "100",
@@ -238,7 +237,7 @@ export const products = [
     desc: "Minimalist small pot",
   },
   {
-    id: uuidv4(),
+    id: "17",
     name: "Syltherine",
     img: syltherine,
     disc: "100",
@@ -249,7 +248,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "18",
     name: "Leviosa",
     img: leviosa,
     disc: "100",
@@ -260,7 +259,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "19",
     name: "Lolito",
     img: lolito,
     disc: "50",
@@ -271,7 +270,7 @@ export const products = [
     desc: "Luxury big sofa",
   },
   {
-    id: uuidv4(),
+    id: "20",
     name: "Respira",
     img: respira,
     disc: "100",
@@ -282,7 +281,7 @@ export const products = [
     desc: "Outdoor bar table and stool",
   },
   {
-    id: uuidv4(),
+    id: "21",
     name: "Grifo",
     img: grifo,
     disc: "100",
@@ -293,7 +292,7 @@ export const products = [
     desc: "Night Lamp",
   },
   {
-    id: uuidv4(),
+    id: "22",
     name: "Muggo",
     img: muggo,
     disc: "100",
@@ -304,7 +303,7 @@ export const products = [
     desc: "Small mug",
   },
   {
-    id: uuidv4(),
+    id: "23",
     name: "Pinky",
     img: pinky,
     disc: "50",
@@ -315,7 +314,7 @@ export const products = [
     desc: "Cute bed set",
   },
   {
-    id: uuidv4(),
+    id: "24",
     name: "Potty",
     img: potty,
     disc: "100",
@@ -326,7 +325,7 @@ export const products = [
     desc: "Minimalist small pot",
   },
   {
-    id: uuidv4(),
+    id: "25",
     name: "Syltherine",
     img: syltherine,
     disc: "100",
@@ -337,7 +336,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "26",
     name: "Leviosa",
     img: leviosa,
     disc: "100",
@@ -348,7 +347,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "27",
     name: "Lolito",
     img: lolito,
     disc: "50",
@@ -359,7 +358,7 @@ export const products = [
     desc: "Luxury big sofa",
   },
   {
-    id: uuidv4(),
+    id: "28",
     name: "Respira",
     img: respira,
     disc: "100",
@@ -370,7 +369,7 @@ export const products = [
     desc: "Outdoor bar table and stool",
   },
   {
-    id: uuidv4(),
+    id: "29",
     name: "Grifo",
     img: grifo,
     disc: "100",
@@ -381,7 +380,7 @@ export const products = [
     desc: "Night Lamp",
   },
   {
-    id: uuidv4(),
+    id: "30",
     name: "Muggo",
     img: muggo,
     disc: "100",
@@ -392,7 +391,7 @@ export const products = [
     desc: "Small mug",
   },
   {
-    id: uuidv4(),
+    id: "31",
     name: "Pinky",
     img: pinky,
     disc: "50",
@@ -403,7 +402,7 @@ export const products = [
     desc: "Cute bed set",
   },
   {
-    id: uuidv4(),
+    id: "32",
     name: "Potty",
     img: potty,
     disc: "100",
@@ -414,7 +413,7 @@ export const products = [
     desc: "Minimalist small pot",
   },
   {
-    id: uuidv4(),
+    id: "33",
     name: "Syltherine",
     img: syltherine,
     disc: "100",
@@ -425,7 +424,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "34",
     name: "Leviosa",
     img: leviosa,
     disc: "100",
@@ -436,7 +435,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "35",
     name: "Lolito",
     img: lolito,
     disc: "50",
@@ -447,7 +446,7 @@ export const products = [
     desc: "Luxury big sofa",
   },
   {
-    id: uuidv4(),
+    id: "36",
     name: "Respira",
     img: respira,
     disc: "100",
@@ -458,7 +457,7 @@ export const products = [
     desc: "Outdoor bar table and stool",
   },
   {
-    id: uuidv4(),
+    id: "37",
     name: "Grifo",
     img: grifo,
     disc: "100",
@@ -469,7 +468,7 @@ export const products = [
     desc: "Night Lamp",
   },
   {
-    id: uuidv4(),
+    id: "38",
     name: "Muggo",
     img: muggo,
     disc: "100",
@@ -480,7 +479,7 @@ export const products = [
     desc: "Small mug",
   },
   {
-    id: uuidv4(),
+    id: "39",
     name: "Pinky",
     img: pinky,
     disc: "50",
@@ -491,7 +490,7 @@ export const products = [
     desc: "Cute bed set",
   },
   {
-    id: uuidv4(),
+    id: "40",
     name: "Potty",
     img: potty,
     disc: "100",
@@ -502,7 +501,7 @@ export const products = [
     desc: "Minimalist small pot",
   },
   {
-    id: uuidv4(),
+    id: "41",
     name: "Syltherine",
     img: syltherine,
     disc: "100",
@@ -513,7 +512,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "42",
     name: "Leviosa",
     img: leviosa,
     disc: "100",
@@ -524,7 +523,7 @@ export const products = [
     desc: "Stylish cafe chair",
   },
   {
-    id: uuidv4(),
+    id: "43",
     name: "Lolito",
     img: lolito,
     disc: "50",
@@ -535,7 +534,7 @@ export const products = [
     desc: "Luxury big sofa",
   },
   {
-    id: uuidv4(),
+    id: "44",
     name: "Respira",
     img: respira,
     disc: "100",
@@ -546,7 +545,7 @@ export const products = [
     desc: "Outdoor bar table and stool",
   },
   {
-    id: uuidv4(),
+    id: "45",
     name: "Grifo",
     img: grifo,
     disc: "100",
@@ -557,7 +556,7 @@ export const products = [
     desc: "Night Lamp",
   },
   {
-    id: uuidv4(),
+    id: "46",
     name: "Muggo",
     img: muggo,
     disc: "100",
@@ -568,7 +567,7 @@ export const products = [
     desc: "Small mug",
   },
   {
-    id: uuidv4(),
+    id: "47",
     name: "Pinky",
     img: pinky,
     disc: "50",
@@ -579,7 +578,7 @@ export const products = [
     desc: "Cute bed set",
   },
   {
-    id: uuidv4(),
+    id: "48",
     name: "Potty",
     img: potty,
     disc: "100",

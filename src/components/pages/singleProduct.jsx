@@ -4,16 +4,7 @@ import Button from "../atoms/button";
 import CountBtn from "../atoms/countBtn";
 import RelatedProducts from "../organisms/relatedProducts";
 import { useState } from "react";
-import syltherine from "../../assets/images/Syltherine.png";
 import { products } from "../../constant";
-import grifo from "../../assets/images/grifo.png";
-import leviosa from "../../assets/images/leviosa.png";
-import lolito from "../../assets/images/lolito.png";
-import muggo from "../../assets/images/muggo.png";
-import pinky from "../../assets/images/Syltherine.png";
-import potty from "../../assets/images/potty.png";
-import respira from "../../assets/images/respira.png";
-import Carousel from "../atoms/carousel";
 import { useParams } from "react-router";
 
 const SingleProduct = (props) => {
@@ -22,14 +13,11 @@ const SingleProduct = (props) => {
   const handleChange = (e) => {
     setDesc({ active: e.target.id });
   };
-
-  console.log(
-    products.filter((item) => {
-      return item.id === par.id;
-    })
-  );
-
+  const datum = products.filter((item) => {
+    return item.id == par.id;
+  });
   const relatedProducts = products.slice(1, 9);
+  console.log(datum);
 
   return (
     <section>
@@ -37,14 +25,26 @@ const SingleProduct = (props) => {
       <div className=" w-full h-fit px-3 md:px-16 md:flex gap-5 lg:gap-x-8 xl:gap-x-14 border-b-2 py-8 md:py-12">
         <div className="w-full md:w-1/2 h-[300px] bg-black/25 flex justify-center">
           <img
-            src={syltherine}
+            src={`/images/${datum[0].img}`}
             alt="product-image"
             className="object-contain"
           />
         </div>
         <div className="w-full md:w-1/2 h-full md:pr-8 mt-3 md:mt-0 flex flex-col gap-y-3">
-          <h1 className="text-3xl lg:text-5xl font-semibold">Asgaard Sofa</h1>
-          <p className="text-xl lg:text-3xl font-semibold">Rp. 2.500.000</p>
+          <h1 className="text-3xl lg:text-5xl font-semibold">
+            {datum[0].name}
+          </h1>
+          <p className="text-xl lg:text-3xl font-semibold">
+            Rp.{" "}
+            {new Intl.NumberFormat("en-US").format(
+              datum[0].discPr(datum[0].disc, datum[0].price)
+            )}
+          </p>
+          {datum[0].disc != "100" && (
+            <p className="text-xl lg:text-3xl font-semibold line-through text-gray-500  -mt-4">
+              Rp. {new Intl.NumberFormat("en-US").format(datum[0].price)}
+            </p>
+          )}
           <div className="w-full flex items-center gap-x-5">
             <Rating name="read-only" value={4} readOnly />
             <span className="md:text-sm lg:text-base">{` 5 Customer reviews`}</span>

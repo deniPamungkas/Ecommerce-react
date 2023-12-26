@@ -40,7 +40,7 @@ const Navbar = () => {
         {navMenu.map((item) => {
           return (
             <li key={item.id}>
-              <img src={item.icon} className=" w-4 h-4" />
+              <img src={`/icons/${item.icon}`} className=" w-4 h-4" />
             </li>
           );
         })}
