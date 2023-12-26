@@ -85,8 +85,8 @@ const Shop = () => {
           <p className="text-center font-semibold z-20 text-white">{`home > shop`}</p>
         </div>
       </div>
-      <div className="w-full h-[60px] xl:h-[80px] bg-filter px-3 md:px-16">
-        <div className="flex h-full items-center justify-between">
+      <div className="w-full h-[80px] md:h-[60px] xl:h-[80px] bg-filter px-3 md:px-16">
+        <div className="flex h-3/5 md:h-full items-center justify-between">
           <div className="flex gap-x-4 items-center">
             <span className="flex gap-x-2 items-center">
               <img src={filter} alt="icon" className="w-4 h-4 inline" />
@@ -100,7 +100,7 @@ const Shop = () => {
               onClick={handleReverse}
             />
             <img src={line} alt="icon" className="h-6 text-black" />
-            <span className="hidden md:inline">
+            <span className="hidden md:inline text-sm lg:text-base">
               Showing{" "}
               {`${currIndex}-${
                 curPage == countPage() ? data.length : curPage * itemsPerPage
@@ -125,6 +125,13 @@ const Shop = () => {
             </select>
           </form>
         </div>
+        <span className="block md:hidden text-xs text-end">
+          Showing{" "}
+          {`${currIndex}-${
+            curPage == countPage() ? data.length : curPage * itemsPerPage
+          }`}{" "}
+          of {data.length} results
+        </span>
       </div>
       <ul className="w-full flex flex-wrap gap-4 my-3 md:my-10 px-3 md:px-16">
         {paginatedData.map((item) => {

@@ -15,7 +15,9 @@ const FilterBar = () => {
           <img src={grid} alt="icon" className="w-4 h-4" />
           <img src={sequence} alt="icon" className="w-4 h-4" />
           <img src={line} alt="icon" className="h-6 text-black" />
-          <span className="hidden md:inline">Showing 1-20 of 50 results</span>
+          <span className="hidden md:inline text-xs lg:text-base">
+            Showing 1-20 of 50 results
+          </span>
         </div>
         <form action="" className=" flex gap-x-2 items-center">
           <label htmlFor="shortBy" className="font-semibold text-sm">

@@ -1,15 +1,24 @@
 import Card from "../atoms/card";
 import Button from "../atoms/button";
 import PropTypes from "prop-types";
+import { useParams } from "react-router";
+import { products } from "../../constant";
 
-const RelatedProducts = (props) => {
+const RelatedProducts = () => {
+  const par = useParams();
+  const datum = products.filter((item) => {
+    return item.id == par.id;
+  });
+  const relatedData = products.filter((item) => {
+    return item.category == datum[0].category;
+  });
   return (
     <section className="px-3 md:px-16 w-full h-fit py-12">
       <h1 className="font-bold text-xl md:text-2xl lg:text-3xl text-center mb-7">
         Related Products
       </h1>
       <ul className="w-full flex flex-wrap gap-4">
-        {props.data.map((item) => {
+        {relatedData.map((item) => {
           return <Card key={item.id} data={item} />;
         })}
       </ul>
