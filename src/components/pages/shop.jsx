@@ -11,7 +11,9 @@ import { useEffect, useState } from "react";
 import SearchInput from "../atoms/searchInput";
 
 const Shop = () => {
-  const [prod, setProd] = useState([...products]);
+  const [selectedSearchInput, setSelectedSearchInput] = useState("");
+  const [product, setProduct] = useState([...products]);
+  const [prod, setProd] = useState([...product]);
   const [data, setData] = useState(prod);
   const handleChange = (e) => {
     setSelectedSort(e.target.value);
@@ -30,15 +32,16 @@ const Shop = () => {
     setSelectedCategory(e.target.value);
     if (e.target.value !== "all") {
       return setProd(
-        products.filter((item) => {
+        product.filter((item) => {
           return item.category == e.target.value;
         })
       );
     } else {
-      return setProd([...products]);
+      return setProd([...product]);
     }
   };
-
+  console.log("product", product);
+  console.log("prod", prod);
   useEffect(() => {
     const sorting = () => {
       setCurPage(1);
@@ -62,7 +65,7 @@ const Shop = () => {
         );
     };
     sorting();
-  }, [selectedSort, selectedCategory]);
+  }, [selectedSort, selectedCategory, product]);
 
   //useeffect hadle asc/desc
   useEffect(() => {
@@ -87,6 +90,20 @@ const Shop = () => {
   };
   const currIndex = (curPage - 1) * itemsPerPage + 1;
 
+  //search input
+
+  const search = (e) => {
+    setSelectedSearchInput(e.toLowerCase());
+    return setProduct(
+      [...products].filter((item) => {
+        return (
+          item.category.toLowerCase().includes(selectedSearchInput) ||
+          item.desc.toLowerCase().includes(selectedSearchInput) ||
+          item.name.toLowerCase().includes(selectedSearchInput)
+        );
+      })
+    );
+  };
   return (
     <section>
       <div className="hidden w-full md:h-[275px] lg:h-[350px] overflow-hidden relative md:flex flex-col justify-center">
@@ -102,9 +119,9 @@ const Shop = () => {
           <p className="text-center font-semibold z-20 text-white">{`home > shop`}</p>
         </div>
       </div>
-      <div className="w-full h-[80px] md:h-[60px] xl:h-[80px] bg-filter px-3 md:px-10 lg:px-16 text-xs md:text-sm">
-        <div className="flex h-1/2 md:h-full items-center justify-between">
-          <div className="flex gap-x-2 md:gap-x-4 items-center ">
+      <div className="w-full h-[80px] md:h-[100px] lg:h-[60px] xl:h-[80px] bg-filter py-0 md:py-1 lg:py-0 px-3 md:px-10 xl:px-16 text-[10px] md:text-sm">
+        <div className="flex h-1/2 lg:h-full items-center justify-between">
+          <div className="flex gap-x-2 md:gap-x-3 items-center ">
             <span className="flex gap-x-1 items-center">
               <img
                 src={filter}
@@ -123,7 +140,7 @@ const Shop = () => {
               onClick={handleReverse}
             />
             <img src={line} alt="icon" className="h-4 md:h-6 text-black" />
-            <span className="hidden md:inline text-sm lg:text-base">
+            <span className="hidden lg:inline text-sm xl:text-base">
               Showing{" "}
               {`${currIndex}-${
                 curPage == countPage() ? data.length : curPage * itemsPerPage
@@ -131,9 +148,9 @@ const Shop = () => {
               of {data.length} results
             </span>
           </div>
-          {/* <div className="hidden md:flex">
-            <SearchInput />
-          </div> */}
+          <div className="hidden lg:flex">
+            <SearchInput se={search} />
+          </div>
           <div className="flex gap-x-4">
             <form action="" className=" flex gap-x-2 items-center">
               <label htmlFor="shortBy" className="font-semibold">
@@ -142,7 +159,7 @@ const Shop = () => {
               <select
                 name="shortBy"
                 id="shortBy"
-                className="h-5 md:h-7 outline-none px-1 bg-white"
+                className="h-5 md:h-7 outline-none px-0 md:px-1 bg-white"
                 onChange={handleChange}
                 defaultValue={"newest"}
               >
@@ -158,7 +175,7 @@ const Shop = () => {
               <select
                 name="shortBy"
                 id="shortBy"
-                className="h-5 md:h-7 outline-none px-1 bg-white"
+                className="h-5 md:h-7 outline-none px-0 md:px-1 bg-white"
                 onChange={handleChangeCategory}
                 defaultValue={"newest"}
               >
@@ -171,9 +188,9 @@ const Shop = () => {
             </form>
           </div>
         </div>
-        <div className="mt-1 flex items-center justify-between md:hidden w-full">
+        <div className="mt-1 md:mt-0 flex items-center justify-between lg:hidden w-full">
           <SearchInput />
-          <span className="text-xs text-end">
+          <span className="text-[10px] md:text-sm text-end">
             Showing{" "}
             {`${currIndex}-${
               curPage == countPage() ? data.length : curPage * itemsPerPage
