@@ -17,7 +17,7 @@ const RelatedProducts = () => {
       <h1 className="font-bold text-xl md:text-2xl lg:text-3xl text-center mb-7">
         Related Products
       </h1>
-      <ul className="w-full flex flex-wrap gap-4">
+      <ul className="w-full flex flex-wrap gap-2">
         {relatedData.map((item) => {
           return <Card key={item.id} data={item} />;
         })}

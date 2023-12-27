@@ -24,20 +24,20 @@ const Card = (props) => {
           {props.data.desc}
         </p>
         <span className="lg:text-base xl:text-lg text-xs font-bold">
-          {props.data.disc
+          {props.data.disc !== "0"
             ? `Rp.${new Intl.NumberFormat("en-US").format(
                 discPrice(props.data.disc, props.data.price)
               )}`
             : `Rp.${new Intl.NumberFormat("en-US").format(props.data.price)}`}
 
           <span className="xl:text-base lg:text-sm md:text-xs font-semibold text-gray-600 lg:ml-4 line-through block lg:inline">
-            {props.data.disc
+            {props.data.disc !== "0"
               ? "Rp." + new Intl.NumberFormat("en-US").format(props.data.price)
               : ""}
           </span>
         </span>
       </div>
-      {props.data.disc !== "100" ? (
+      {props.data.disc !== "0" ? (
         <div className="w-8 h-8 lg:w-10 lg:h-10 text-xs lg:text-base bg-colorDisc rounded-full flex justify-center items-center text-white absolute right-2 top-2 lg:right-5 lg:top-5">
           -{props.data.disc}%
         </div>

@@ -4,7 +4,7 @@ import Button from "../atoms/button";
 
 const Footer = () => {
   return (
-    <section className="w-full h-fit xl:h-[500px] border-t-2 px-5 md:px-16 py-10">
+    <section className="w-full h-fit xl:h-[500px] border-t-2 px-5 md:px-10 lg:px-16 py-10">
       <div className="w-full h-full  flex flex-col justify-between">
         <div className=" w-full h-fit xl:h-[320px] flex flex-col xl:flex-row">
           <div className="h-full w-2/5">
@@ -18,7 +18,7 @@ const Footer = () => {
             <p>Gables,</p>
             <p>FL 33134 USA</p>
           </div>
-          <div className="h-full w-full text-xs md:text-xl xl:w-3/5 block md:flex mt-8 xl:mt-0">
+          <div className="h-full w-full text-xs md:text-lg lg:text-xl xl:w-3/5 block md:flex mt-8 xl:mt-0">
             <div className="w-full md:w-1/2 h-full flex justify-start gap-x-10 md:gap-x-0 md:justify-between font-semibold">
               <ul className="flex flex-col gap-y-3 xl:gap-y-10">
                 <li className="text-gray-500">Links</li>

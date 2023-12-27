@@ -10,7 +10,7 @@ const OurProducts = () => {
       <h1 className="font-bold text-xl md:text-2xl text-center mb-7">
         Our Products
       </h1>
-      <ul className="w-full flex flex-wrap gap-4">
+      <ul className="w-full flex flex-wrap gap-2">
         {example.map((item) => {
           return <Card key={item.id} data={item} />;
         })}

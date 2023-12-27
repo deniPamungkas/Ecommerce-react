@@ -5,7 +5,7 @@ import line from "../../assets/icons/line.png";
 
 const FilterBar = () => {
   return (
-    <div className="w-full h-[60px] xl:h-[80px] bg-filter px-3 md:px-16">
+    <div className="w-full h-[60px] xl:h-[80px] bg-red-500 px-3 md:px-10 lg:px-16">
       <div className="flex h-full items-center justify-between">
         <div className="flex gap-x-4 items-center">
           <span className="flex gap-x-2 items-center">

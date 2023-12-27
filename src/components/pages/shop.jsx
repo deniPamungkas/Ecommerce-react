@@ -8,9 +8,10 @@ import sequence from "../../assets/icons/sequence.png";
 import line from "../../assets/icons/line.png";
 import OfferBar from "../molecules/offerBar";
 import { useEffect, useState } from "react";
+import SearchInput from "../atoms/searchInput";
 
 const Shop = () => {
-  const prod = [...products];
+  const [prod, setProd] = useState([...products]);
   const [data, setData] = useState(prod);
   const handleChange = (e) => {
     setSelectedSort(e.target.value);
@@ -22,6 +23,22 @@ const Shop = () => {
   const handleReverse = () => {
     setReverseData((cur) => !cur);
   };
+
+  //handle category
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const handleChangeCategory = (e) => {
+    setSelectedCategory(e.target.value);
+    if (e.target.value !== "all") {
+      return setProd(
+        products.filter((item) => {
+          return item.category == e.target.value;
+        })
+      );
+    } else {
+      return setProd([...products]);
+    }
+  };
+
   useEffect(() => {
     const sorting = () => {
       setCurPage(1);
@@ -39,13 +56,13 @@ const Shop = () => {
       }
       if (selectedSort == "disc")
         return setData(
-          products.filter((item) => {
-            return item.disc != "100";
+          prod.filter((item) => {
+            return item.disc != "0";
           })
         );
     };
     sorting();
-  }, [selectedSort]);
+  }, [selectedSort, selectedCategory]);
 
   //useeffect hadle asc/desc
   useEffect(() => {
@@ -85,21 +102,27 @@ const Shop = () => {
           <p className="text-center font-semibold z-20 text-white">{`home > shop`}</p>
         </div>
       </div>
-      <div className="w-full h-[80px] md:h-[60px] xl:h-[80px] bg-filter px-3 md:px-16">
-        <div className="flex h-3/5 md:h-full items-center justify-between">
-          <div className="flex gap-x-4 items-center">
-            <span className="flex gap-x-2 items-center">
-              <img src={filter} alt="icon" className="w-4 h-4 inline" />
-              <span className="text-sm font-semibold">Filter</span>
+      <div className="w-full h-[80px] md:h-[60px] xl:h-[80px] bg-filter px-3 md:px-10 lg:px-16 text-xs md:text-sm">
+        <div className="flex h-1/2 md:h-full items-center justify-between">
+          <div className="flex gap-x-2 md:gap-x-4 items-center ">
+            <span className="flex gap-x-1 items-center">
+              <img
+                src={filter}
+                alt="icon"
+                className="w-2 h-2 md:w-4 md:h-4 inline"
+              />
+              <div className="text-[10px] md:text-sm h-fit flex items-center font-semibold">
+                Filter
+              </div>
             </span>
-            <img src={grid} alt="icon" className="w-4 h-4" />
+            <img src={grid} alt="icon" className="w-2 h-2 md:w-4 md:h-4" />
             <img
               src={sequence}
               alt="icon"
-              className="w-4 h-4"
+              className="w-2 h-2 md:w-4 md:h-4"
               onClick={handleReverse}
             />
-            <img src={line} alt="icon" className="h-6 text-black" />
+            <img src={line} alt="icon" className="h-4 md:h-6 text-black" />
             <span className="hidden md:inline text-sm lg:text-base">
               Showing{" "}
               {`${currIndex}-${
@@ -108,32 +131,58 @@ const Shop = () => {
               of {data.length} results
             </span>
           </div>
-          <form action="" className=" flex gap-x-2 items-center">
-            <label htmlFor="shortBy" className="font-semibold text-sm">
-              Short By
-            </label>
-            <select
-              name="shortBy"
-              id="shortBy"
-              className="h-7 outline-none px-1 bg-white"
-              onChange={handleChange}
-              defaultValue={"newest"}
-            >
-              <option value="newest">Newest</option>
-              <option value="price">Price</option>
-              <option value="disc">Discount</option>
-            </select>
-          </form>
+          {/* <div className="hidden md:flex">
+            <SearchInput />
+          </div> */}
+          <div className="flex gap-x-4">
+            <form action="" className=" flex gap-x-2 items-center">
+              <label htmlFor="shortBy" className="font-semibold">
+                Short By
+              </label>
+              <select
+                name="shortBy"
+                id="shortBy"
+                className="h-5 md:h-7 outline-none px-1 bg-white"
+                onChange={handleChange}
+                defaultValue={"newest"}
+              >
+                <option value="newest">Newest</option>
+                <option value="price">Price</option>
+                <option value="disc">Discount</option>
+              </select>
+            </form>
+            <form action="" className=" flex gap-x-2 items-center">
+              <label htmlFor="shortBy" className="font-semibold">
+                Category
+              </label>
+              <select
+                name="shortBy"
+                id="shortBy"
+                className="h-5 md:h-7 outline-none px-1 bg-white"
+                onChange={handleChangeCategory}
+                defaultValue={"newest"}
+              >
+                <option value="all">All</option>
+                <option value="sofa">Sofa</option>
+                <option value="lamp">Lamp</option>
+                <option value="bed">Bed</option>
+                <option value="chair">Chair</option>
+              </select>
+            </form>
+          </div>
         </div>
-        <span className="block md:hidden text-xs text-end">
-          Showing{" "}
-          {`${currIndex}-${
-            curPage == countPage() ? data.length : curPage * itemsPerPage
-          }`}{" "}
-          of {data.length} results
-        </span>
+        <div className="mt-1 flex items-center justify-between md:hidden w-full">
+          <SearchInput />
+          <span className="text-xs text-end">
+            Showing{" "}
+            {`${currIndex}-${
+              curPage == countPage() ? data.length : curPage * itemsPerPage
+            }`}{" "}
+            of {data.length} results
+          </span>
+        </div>
       </div>
-      <ul className="w-full flex flex-wrap gap-4 my-3 md:my-10 px-3 md:px-16">
+      <ul className="w-full flex flex-wrap gap-2 my-3 md:my-10 px-3 md:px-16">
         {paginatedData.map((item) => {
           return <Card key={item.id} data={item} />;
         })}

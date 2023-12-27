@@ -40,7 +40,7 @@ const SingleProduct = (props) => {
               datum[0].discPr(datum[0].disc, datum[0].price)
             )}
           </p>
-          {datum[0].disc != "100" && (
+          {datum[0].disc != "0" && (
             <p className="text-xl lg:text-3xl font-semibold line-through text-gray-500  -mt-4">
               Rp. {new Intl.NumberFormat("en-US").format(datum[0].price)}
             </p>
