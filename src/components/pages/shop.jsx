@@ -11,61 +11,127 @@ import { useEffect, useState } from "react";
 import SearchInput from "../atoms/searchInput";
 
 const Shop = () => {
-  const [selectedSearchInput, setSelectedSearchInput] = useState("");
+  const [selectedSearchInput, setSelectedSearchInput] = useState("all");
   const [product, setProduct] = useState([...products]);
-  const [prod, setProd] = useState([...product]);
-  const [data, setData] = useState(prod);
-  const handleChange = (e) => {
-    setSelectedSort(e.target.value);
-  };
+  const [data, setData] = useState(product);
 
   //handle sortBy
   const [selectedSort, setSelectedSort] = useState("newest");
   const [reverseData, setReverseData] = useState(false);
+  const handleChange = (e) => {
+    setSelectedSort(e.target.value);
+  };
   const handleReverse = () => {
     setReverseData((cur) => !cur);
   };
 
+  //search search input
+  const search = (e) => {
+    setSelectedSearchInput(e.toLowerCase());
+    return setProduct(
+      products.filter((item) => {
+        return (
+          item.category.toLowerCase().includes(e.toLowerCase()) ||
+          item.name.toLowerCase().includes(e.toLowerCase()) ||
+          item.desc.toLowerCase().includes(e.toLowerCase())
+        );
+      })
+    );
+  };
+
   //handle category
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const handleChangeCategory = (e) => {
     setSelectedCategory(e.target.value);
-    if (e.target.value !== "all") {
-      return setProd(
-        product.filter((item) => {
-          return item.category == e.target.value;
-        })
-      );
-    } else {
-      return setProd([...product]);
-    }
   };
-  console.log("product", product);
-  console.log("prod", prod);
+
   useEffect(() => {
-    const sorting = () => {
-      setCurPage(1);
-      if (selectedSort == "newest") {
-        const newest = prod.sort((a, b) =>
-          a.new === b.new ? 0 : a.new ? -1 : 1
-        );
-        return setData([...newest]);
+    const sort = () => {
+      if (selectedCategory !== "all") {
+        return setData(() => {
+          /////////
+          if (selectedSort == "newest") {
+            return [
+              ...product
+                .filter((item) => {
+                  return item.category == selectedCategory;
+                })
+                .sort((a, b) => (a.new === b.new ? 0 : a.new ? -1 : 1)),
+            ];
+          }
+          ///////////
+          if (selectedSort == "price") {
+            return [
+              ...product
+                .filter((item) => {
+                  return item.category == selectedCategory;
+                })
+                .sort(
+                  (a, b) =>
+                    a.discPr(a.disc, a.price) - b.discPr(b.disc, b.price)
+                ),
+            ];
+          }
+          ///////////
+          if (selectedSort == "disc") {
+            return [
+              ...product
+                .filter((item) => {
+                  return item.category == selectedCategory;
+                })
+                .filter((item) => {
+                  return item.disc != "0";
+                }),
+            ];
+          }
+          //////////
+          else {
+            [
+              ...product.filter((item) => {
+                return item.category == selectedCategory;
+              }),
+            ];
+          }
+          /////////
+        });
+      } else {
+        return setData(() => {
+          /////////
+          if (selectedSort == "newest") {
+            return [
+              ...product.sort((a, b) => (a.new === b.new ? 0 : a.new ? -1 : 1)),
+            ];
+          }
+          ///////////
+          if (selectedSort == "price") {
+            return [
+              ...product.sort(
+                (a, b) => a.discPr(a.disc, a.price) - b.discPr(b.disc, b.price)
+              ),
+            ];
+          }
+          ///////////
+          if (selectedSort == "disc") {
+            return [
+              ...product.filter((item) => {
+                return item.disc != "0";
+              }),
+            ];
+          }
+          //////////
+          else {
+            [
+              ...product.filter((item) => {
+                return item.category == selectedCategory;
+              }),
+            ];
+          }
+          /////////
+        });
       }
-      if (selectedSort == "price") {
-        const price = prod.sort(
-          (a, b) => a.discPr(a.disc, a.price) - b.discPr(b.disc, b.price)
-        );
-        return setData([...price]);
-      }
-      if (selectedSort == "disc")
-        return setData(
-          prod.filter((item) => {
-            return item.disc != "0";
-          })
-        );
     };
-    sorting();
-  }, [selectedSort, selectedCategory, product]);
+    sort();
+  }, [selectedSearchInput, selectedCategory, selectedSort]);
 
   //useeffect hadle asc/desc
   useEffect(() => {
@@ -78,7 +144,7 @@ const Shop = () => {
   function paginate(data, currentPage, itemsPerPage) {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return data.slice(startIndex, endIndex);
+    return data?.slice(startIndex, endIndex);
   }
   const paginatedData = paginate(data, curPage, itemsPerPage);
   const handleChangePage = (event, page) => {
@@ -89,21 +155,6 @@ const Shop = () => {
     return Math.floor(data.length / itemsPerPage) + 1;
   };
   const currIndex = (curPage - 1) * itemsPerPage + 1;
-
-  //search input
-
-  const search = (e) => {
-    setSelectedSearchInput(e.toLowerCase());
-    return setProduct(
-      [...products].filter((item) => {
-        return (
-          item.category.toLowerCase().includes(selectedSearchInput) ||
-          item.desc.toLowerCase().includes(selectedSearchInput) ||
-          item.name.toLowerCase().includes(selectedSearchInput)
-        );
-      })
-    );
-  };
   return (
     <section>
       <div className="hidden w-full md:h-[275px] lg:h-[350px] overflow-hidden relative md:flex flex-col justify-center">
