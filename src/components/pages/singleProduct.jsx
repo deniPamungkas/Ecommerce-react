@@ -17,8 +17,6 @@ const SingleProduct = (props) => {
     return item.id == par.id;
   });
   const relatedProducts = products.slice(1, 9);
-  console.log(datum);
-
   return (
     <section>
       <div className="w-full h-[60px] xl:h-[70px] bg-filter px-3 md:px-16"></div>
@@ -30,7 +28,7 @@ const SingleProduct = (props) => {
             className="object-contain"
           />
         </div>
-        <div className="w-full md:w-1/2 h-full md:pr-8 mt-3 md:mt-0 flex flex-col gap-y-3">
+        <form className="w-full md:w-1/2 h-full md:pr-8 mt-3 md:mt-0 flex flex-col gap-y-3">
           <h1 className="text-3xl lg:text-5xl font-semibold">
             {datum[0].name}
           </h1>
@@ -137,7 +135,7 @@ const SingleProduct = (props) => {
               Add to cart
             </Button>
           </div>
-        </div>
+        </form>
       </div>
       <div className="w-full h-fit gap-y-10 flex flex-col items-center px-8 md:px-24 xl:px-52 py-8 md:py-12 text-gray-500 border-b-2">
         <ul className="flex gap-x-3 md:gap-x-10 text-xs md:text-lg xl:text-xl">

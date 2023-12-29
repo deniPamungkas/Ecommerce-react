@@ -240,7 +240,7 @@ const Shop = () => {
           </div>
         </div>
         <div className="mt-1 md:mt-0 flex items-center justify-between lg:hidden w-full">
-          <SearchInput />
+          <SearchInput se={search} />
           <span className="text-[10px] md:text-sm text-end">
             Showing{" "}
             {`${currIndex}-${
