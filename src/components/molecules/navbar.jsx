@@ -3,6 +3,8 @@ import logo from "../../assets/logo/Meubel-House-Logos-05.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks, navMenu } from "../../constant";
 import { useState } from "react";
+import Badge from "@mui/material/Badge";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   // handle aktif/nonAktif sideMenu
@@ -20,6 +22,11 @@ const Navbar = () => {
   window.addEventListener("resize", function () {
     setSide(false);
   });
+
+  const cartSum = useSelector((state) => {
+    return state.cart.data;
+  });
+
   return (
     <nav className="bg-white flex h-[70px] items-center justify-between px-3 md:px-10 z-10">
       <Link to={"/"}>
@@ -36,14 +43,21 @@ const Navbar = () => {
           );
         })}
       </ul>
-      <ul className="md:flex hidden lg:w-[200px] md:w-[150px] justify-between font-semibold">
-        {navMenu.map((item) => {
-          return (
-            <li key={item.id}>
-              <img src={`/icons/${item.icon}`} className=" w-4 h-4" />
-            </li>
-          );
-        })}
+      <ul className="md:flex hidden lg:w-[200px] md:w-[150px] justify-between items-center font-semibold">
+        <li>
+          <img src={`/icons/user.png`} className=" w-4 h-4" />
+        </li>
+        <li>
+          <img src={`/icons/search.png`} className=" w-4 h-4" />
+        </li>
+        <li>
+          <img src={`/icons/wishlist.png`} className=" w-4 h-4" />
+        </li>
+        <Link to={"/cart"}>
+          <Badge badgeContent={cartSum?.length} color="success" size="small">
+            <img src={`/icons/cart.png`} className=" w-4 h-4" />
+          </Badge>
+        </Link>
       </ul>
       <span className="block md:hidden" onClick={handleSide}>
         <MenuIcon />

@@ -1,15 +1,23 @@
 import PropTypes from "prop-types";
 import Button from "./button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const CountBtn = () => {
+const CountBtn = (props) => {
   const [val, setVal] = useState(0);
-  const handlePlus = () => {
+  const handlePlus = (e) => {
+    e.preventDefault();
     setVal(val + 1);
   };
-  const handleMinus = () => {
-    if (val > 0) return setVal(val - 1);
+  const handleMinus = (e) => {
+    e.preventDefault();
+    if (val > 0) {
+      setVal(val - 1);
+    }
   };
+  useEffect(() => {
+    props.qty(val);
+  }, [val]);
+
   return (
     <div className=" border-2 border-black overflow-hidden flex items-center rounded-lg w-fit h-[40px] md:h-[50px]">
       <Button
@@ -34,6 +42,7 @@ const CountBtn = () => {
 CountBtn.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
+  qty: PropTypes.any,
 };
 
 export default CountBtn;

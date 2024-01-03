@@ -3,20 +3,64 @@ import "../../index.scss";
 import Button from "../atoms/button";
 import CountBtn from "../atoms/countBtn";
 import RelatedProducts from "../organisms/relatedProducts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { products } from "../../constant";
 import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/actions/cartSlice";
+import { discPrice } from "../../utils/discount";
 
 const SingleProduct = (props) => {
   const par = useParams();
+  //handle menu description
   const [desc, setDesc] = useState({ active: "Description" });
   const handleChange = (e) => {
     setDesc({ active: e.target.id });
   };
+  //get single product & related products
   const datum = products.filter((item) => {
     return item.id == par.id;
   });
   const relatedProducts = products.slice(1, 9);
+  const [dat, setDat] = useState({
+    id: par.id,
+    name: datum[0].name,
+    img: datum[0].img,
+    category: datum[0].category,
+    disc: datum[0].disc,
+    price: datum[0].price,
+    size: "L",
+    color: "red",
+    qty: null,
+  });
+  const handleChangeDat = (e) => {
+    if (e.target.name) {
+      setDat({ ...dat, [e.target.name]: e.target.value });
+    }
+  };
+  // window.localStorage.removeItem("cart");
+  const itemQty = (e) => {
+    setDat({ ...dat, ["qty"]: e });
+  };
+
+  const dispatch = useDispatch();
+  const handleAddCart = (e) => {
+    e.preventDefault();
+    if (dat.qty != 0) return dispatch(addToCart(dat));
+    return null;
+  };
+
+  const cartSum = useSelector((state) => {
+    return state.cart;
+  });
+
+  console.log(cartSum.data);
+
+  useEffect(() => {
+    window.localStorage.setItem("cart", JSON.stringify(cartSum.data));
+    console.log("update local storage");
+  }, [cartSum]);
+
   return (
     <section>
       <div className="w-full h-[60px] xl:h-[70px] bg-filter px-3 md:px-16"></div>
@@ -35,7 +79,7 @@ const SingleProduct = (props) => {
           <p className="text-xl lg:text-3xl font-semibold">
             Rp.{" "}
             {new Intl.NumberFormat("en-US").format(
-              datum[0].discPr(datum[0].disc, datum[0].price)
+              discPrice(datum[0].disc, datum[0].price)
             )}
           </p>
           {datum[0].disc != "0" && (
@@ -62,6 +106,8 @@ const SingleProduct = (props) => {
                 id="L"
                 name="size"
                 value={"L"}
+                defaultChecked
+                onChange={handleChangeDat}
               />
               <label htmlFor="L">
                 <div className="w-6 h-6 md:w-7 md:h-7 text-[10px] lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
@@ -74,6 +120,7 @@ const SingleProduct = (props) => {
                 id="XL"
                 name="size"
                 value={"XL"}
+                onChange={handleChangeDat}
               />
               <label htmlFor="XL">
                 <div className="w-6 h-6 md:w-7 md:h-7 text-[10px] lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
@@ -86,6 +133,7 @@ const SingleProduct = (props) => {
                 id="XS"
                 name="size"
                 value={"XS"}
+                onChange={handleChangeDat}
               />
               <label htmlFor="XS">
                 <div className="w-6 h-6 md:w-7 md:h-7 text-[10px] lg:text-base md:text-sm lg:w-10 lg:h-10 rounded-md md:rounded-lg bg-filter flex justify-center items-center">
@@ -103,6 +151,8 @@ const SingleProduct = (props) => {
                 id="red"
                 name="color"
                 value={"red"}
+                defaultChecked
+                onChange={handleChangeDat}
               />
               <label htmlFor="red">
                 <div className="w-6 h-6 md:w-7 md:h-7 lg:w-10 lg:h-10 rounded-full bg-red-500"></div>
@@ -113,6 +163,7 @@ const SingleProduct = (props) => {
                 id="blueOcean"
                 name="color"
                 value={"blueOcean"}
+                onChange={handleChangeDat}
               />
               <label htmlFor="blueOcean">
                 <div className="w-6 h-6 md:w-7 md:h-7 lg:w-10 lg:h-10 rounded-full bg-blue-500"></div>
@@ -123,6 +174,7 @@ const SingleProduct = (props) => {
                 id="cream"
                 name="color"
                 value={"cream"}
+                onChange={handleChangeDat}
               />
               <label htmlFor="cream">
                 <div className="w-6 h-6 md:w-7 md:h-7 lg:w-10 lg:h-10 rounded-full bg-yellow-100"></div>
@@ -130,8 +182,11 @@ const SingleProduct = (props) => {
             </div>
           </div>
           <div className="w-full items-center flex gap-x-3 mt-10">
-            <CountBtn />
-            <Button className="border-2 border-black px-4 h-[40px] text-xs md:text-base md:px-6 md:h-[50px] rounded-lg font-semibold">
+            <CountBtn qty={itemQty} />
+            <Button
+              className="border-2 border-black px-4 h-[40px] text-xs md:text-base md:px-6 md:h-[50px] rounded-lg font-semibold"
+              onClick={handleAddCart}
+            >
               Add to cart
             </Button>
           </div>

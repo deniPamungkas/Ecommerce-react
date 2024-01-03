@@ -15,6 +15,7 @@ Button.propTypes = {
   children: PropTypes.any,
   onClick: PropTypes.any,
   className: PropTypes.string,
+  disabled: PropTypes.string,
 };
 
 export default Button;

@@ -9,6 +9,7 @@ import line from "../../assets/icons/line.png";
 import OfferBar from "../molecules/offerBar";
 import { useEffect, useState } from "react";
 import SearchInput from "../atoms/searchInput";
+import { discPrice } from "../../utils/discount";
 
 const Shop = () => {
   const [selectedSearchInput, setSelectedSearchInput] = useState("all");
@@ -68,7 +69,7 @@ const Shop = () => {
                 })
                 .sort(
                   (a, b) =>
-                    a.discPr(a.disc, a.price) - b.discPr(b.disc, b.price)
+                    discPrice(a.disc, a.price) - discPrice(b.disc, b.price)
                 ),
             ];
           }
@@ -106,7 +107,8 @@ const Shop = () => {
           if (selectedSort == "price") {
             return [
               ...product.sort(
-                (a, b) => a.discPr(a.disc, a.price) - b.discPr(b.disc, b.price)
+                (a, b) =>
+                  discPrice(a.disc, a.price) - discPrice(b.disc, b.price)
               ),
             ];
           }

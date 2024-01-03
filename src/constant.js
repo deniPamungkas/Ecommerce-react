@@ -68,7 +68,6 @@ export const products = [
     price: 3500000,
     new: true,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -79,7 +78,6 @@ export const products = [
     price: 2500000,
     new: false,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -90,7 +88,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Luxury big sofa",
   },
   {
@@ -101,7 +98,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Outdoor bar table and stool",
   },
   {
@@ -112,7 +108,6 @@ export const products = [
     price: 1500000,
     new: false,
     category: "lamp",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Night Lamp",
   },
   {
@@ -123,7 +118,6 @@ export const products = [
     price: 150000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Small mug",
   },
   {
@@ -134,7 +128,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "bed",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Cute bed set",
   },
   {
@@ -145,7 +138,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Minimalist small pot",
   },
   {
@@ -156,7 +148,6 @@ export const products = [
     price: 3500000,
     new: true,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -167,7 +158,6 @@ export const products = [
     price: 2500000,
     new: false,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -178,7 +168,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Luxury big sofa",
   },
   {
@@ -189,7 +178,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Outdoor bar table and stool",
   },
   {
@@ -200,7 +188,6 @@ export const products = [
     price: 1500000,
     new: false,
     category: "lamp",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Night Lamp",
   },
   {
@@ -211,7 +198,6 @@ export const products = [
     price: 150000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Small mug",
   },
   {
@@ -222,7 +208,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "bed",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Cute bed set",
   },
   {
@@ -233,7 +218,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Minimalist small pot",
   },
   {
@@ -244,7 +228,6 @@ export const products = [
     price: 3500000,
     new: true,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -255,7 +238,6 @@ export const products = [
     price: 2500000,
     new: false,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -266,7 +248,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Luxury big sofa",
   },
   {
@@ -277,7 +258,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Outdoor bar table and stool",
   },
   {
@@ -288,7 +268,6 @@ export const products = [
     price: 1500000,
     new: false,
     category: "lamp",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Night Lamp",
   },
   {
@@ -299,7 +278,6 @@ export const products = [
     price: 150000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Small mug",
   },
   {
@@ -310,7 +288,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "bed",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Cute bed set",
   },
   {
@@ -321,7 +298,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Minimalist small pot",
   },
   {
@@ -332,7 +308,6 @@ export const products = [
     price: 3500000,
     new: true,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -343,7 +318,6 @@ export const products = [
     price: 2500000,
     new: false,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -354,7 +328,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Luxury big sofa",
   },
   {
@@ -365,7 +338,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Outdoor bar table and stool",
   },
   {
@@ -376,7 +348,6 @@ export const products = [
     price: 1500000,
     new: false,
     category: "lamp",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Night Lamp",
   },
   {
@@ -387,7 +358,6 @@ export const products = [
     price: 150000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Small mug",
   },
   {
@@ -398,7 +368,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "bed",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Cute bed set",
   },
   {
@@ -409,7 +378,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Minimalist small pot",
   },
   {
@@ -420,7 +388,6 @@ export const products = [
     price: 3500000,
     new: true,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -431,7 +398,6 @@ export const products = [
     price: 2500000,
     new: false,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -442,7 +408,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Luxury big sofa",
   },
   {
@@ -453,7 +418,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Outdoor bar table and stool",
   },
   {
@@ -464,7 +428,6 @@ export const products = [
     price: 1500000,
     new: false,
     category: "lamp",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Night Lamp",
   },
   {
@@ -475,7 +438,6 @@ export const products = [
     price: 150000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Small mug",
   },
   {
@@ -486,7 +448,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "bed",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Cute bed set",
   },
   {
@@ -497,7 +458,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Minimalist small pot",
   },
   {
@@ -508,7 +468,6 @@ export const products = [
     price: 3500000,
     new: true,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -519,7 +478,6 @@ export const products = [
     price: 2500000,
     new: false,
     category: "chair",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Stylish cafe chair",
   },
   {
@@ -530,7 +488,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Luxury big sofa",
   },
   {
@@ -541,7 +498,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Outdoor bar table and stool",
   },
   {
@@ -552,7 +508,6 @@ export const products = [
     price: 1500000,
     new: false,
     category: "lamp",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Night Lamp",
   },
   {
@@ -563,7 +518,6 @@ export const products = [
     price: 150000,
     new: false,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Small mug",
   },
   {
@@ -574,7 +528,6 @@ export const products = [
     price: 14000000,
     new: false,
     category: "bed",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Cute bed set",
   },
   {
@@ -585,7 +538,6 @@ export const products = [
     price: 500000,
     new: true,
     category: "sofa",
-    discPr: (disc, price) => price - (parseInt(disc) * price) / 100,
     desc: "Minimalist small pot",
   },
   //   {
