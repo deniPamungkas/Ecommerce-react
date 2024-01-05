@@ -54,8 +54,6 @@ const SingleProduct = (props) => {
     return state.cart;
   });
 
-  console.log(cartSum.data);
-
   useEffect(() => {
     window.localStorage.setItem("cart", JSON.stringify(cartSum.data));
     console.log("update local storage");

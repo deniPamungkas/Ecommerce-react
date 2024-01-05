@@ -5,6 +5,11 @@ import { navLinks, navMenu } from "../../constant";
 import { useState } from "react";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Navbar = () => {
   // handle aktif/nonAktif sideMenu
@@ -30,7 +35,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white flex h-[70px] items-center justify-between px-3 md:px-10 z-10">
       <Link to={"/"}>
-        <div className="flex items-center font-bold text-3xl gap-x-1">
+        <div className="flex items-center font-bold text-xl md:text-3xl gap-x-1">
           <img src={logo} alt="company-logo" className=" w-10 h-7" /> Furniro
         </div>
       </Link>
@@ -63,7 +68,7 @@ const Navbar = () => {
         <MenuIcon />
       </span>
       <div
-        className={`md:hidden absolute top-0 right-0 bottom-0 left-10 bg-white z-20 ${
+        className={`md:hidden absolute top-0 right-0 bottom-0 left-10 bg-white z-50 ${
           side ? "" : "hidden"
         }`}
       >
@@ -77,12 +82,34 @@ const Navbar = () => {
           {navLinks.map((item) => {
             return (
               <Link to={item.dest} key={item.id}>
-                <li className="flex-1 h-20 bg-orange-300 px-3 rounded-lg flex items-center justify-start text-xl font-semibold">
+                <li
+                  className="flex-1 gap-x-2 h-20 bg-orange-300 px-3 rounded-lg flex items-center justify-start text-xl font-semibold z-50"
+                  onClick={handleSide}
+                >
+                  {item.title == "Home" && <HomeOutlinedIcon />}
+                  {item.title == "Shop" && <ShoppingBagOutlinedIcon />}
+                  {item.title == "About" && <InfoOutlinedIcon />}
+                  {item.title == "Connect" && <EmailOutlinedIcon />}
                   {item.title}
                 </li>
               </Link>
             );
           })}
+          <Link to={"/cart"}>
+            <li
+              className="flex-1 gap-x-2 h-20 bg-orange-300 px-3 rounded-lg flex items-center justify-start text-xl font-semibold z-50"
+              onClick={handleSide}
+            >
+              <Badge
+                badgeContent={cartSum?.length}
+                color="success"
+                size="small"
+              >
+                <ShoppingCartOutlinedIcon />
+              </Badge>
+              Cart
+            </li>
+          </Link>
         </ul>
       </div>
     </nav>
