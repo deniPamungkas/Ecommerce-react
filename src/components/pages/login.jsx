@@ -3,7 +3,7 @@ import Button from "../atoms/button";
 const Login = () => {
   return (
     <div className="bg-filter w-full h-screen flex justify-center items-center">
-      <form action="" className="w-[400px] flex flex-col gap-y-8">
+      <form action="" className="w-[90%] md:w-[400px] flex flex-col gap-y-8">
         <h1 className="font-bold text-3xl text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
           Login First
         </h1>

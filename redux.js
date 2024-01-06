@@ -33,7 +33,7 @@ const store = configureStore({
 console.log("store", store.getState());
 
 //action
-store.dispatch(cartReducer.actions.addCart({ id: "1", name: "syltherine" }));
-console.log(store.getState());
-store.dispatch(cartReducer.actions.removeCart({ id: "1", name: "syltherine" }));
-console.log(store.getState());
+// store.dispatch(cartReducer.actions.addCart({ id: "1", name: "syltherine" }));
+// console.log(store.getState());
+// store.dispatch(cartReducer.actions.removeCart({ id: "1", name: "syltherine" }));
+// console.log(store.getState());

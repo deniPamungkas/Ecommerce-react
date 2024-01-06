@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/actions/cartSlice";
 import { discPrice } from "../../utils/discount";
 
-const SingleProduct = (props) => {
+const SingleProduct = () => {
   const par = useParams();
   //handle menu description
   const [desc, setDesc] = useState({ active: "Description" });

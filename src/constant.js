@@ -62,7 +62,7 @@ export const navMenu = [
 export const products = [
   {
     id: "1",
-    name: "Syltherine",
+    name: "Syltherine1",
     img: syltherine,
     disc: "0",
     price: 3500000,
@@ -72,7 +72,7 @@ export const products = [
   },
   {
     id: "2",
-    name: "Leviosa",
+    name: "Leviosa1",
     img: leviosa,
     disc: "0",
     price: 2500000,
@@ -82,7 +82,7 @@ export const products = [
   },
   {
     id: "3",
-    name: "Lolito",
+    name: "Lolito1",
     img: lolito,
     disc: "50",
     price: 14000000,
@@ -92,7 +92,7 @@ export const products = [
   },
   {
     id: "4",
-    name: "Respira",
+    name: "Respira1",
     img: respira,
     disc: "0",
     price: 500000,
@@ -102,7 +102,7 @@ export const products = [
   },
   {
     id: "5",
-    name: "Grifo",
+    name: "Grifo1",
     img: grifo,
     disc: "0",
     price: 1500000,
@@ -112,7 +112,7 @@ export const products = [
   },
   {
     id: "6",
-    name: "Muggo",
+    name: "Muggo1",
     img: muggo,
     disc: "0",
     price: 150000,
@@ -122,7 +122,7 @@ export const products = [
   },
   {
     id: "7",
-    name: "Pinky",
+    name: "Pinky1",
     img: pinky,
     disc: "50",
     price: 14000000,
@@ -132,7 +132,7 @@ export const products = [
   },
   {
     id: "8",
-    name: "Potty",
+    name: "Potty1",
     img: potty,
     disc: "0",
     price: 500000,
@@ -142,7 +142,7 @@ export const products = [
   },
   {
     id: "9",
-    name: "Syltherine",
+    name: "Syltherine2",
     img: syltherine,
     disc: "0",
     price: 3500000,
@@ -152,7 +152,7 @@ export const products = [
   },
   {
     id: "10",
-    name: "Leviosa",
+    name: "Leviosa2",
     img: leviosa,
     disc: "0",
     price: 2500000,
@@ -162,7 +162,7 @@ export const products = [
   },
   {
     id: "11",
-    name: "Lolito",
+    name: "Lolito2",
     img: lolito,
     disc: "50",
     price: 14000000,
@@ -172,7 +172,7 @@ export const products = [
   },
   {
     id: "12",
-    name: "Respira",
+    name: "Respira2",
     img: respira,
     disc: "0",
     price: 500000,
@@ -182,7 +182,7 @@ export const products = [
   },
   {
     id: "13",
-    name: "Grifo",
+    name: "Grifo2",
     img: grifo,
     disc: "0",
     price: 1500000,
@@ -192,7 +192,7 @@ export const products = [
   },
   {
     id: "14",
-    name: "Muggo",
+    name: "Muggo2",
     img: muggo,
     disc: "0",
     price: 150000,
@@ -202,7 +202,7 @@ export const products = [
   },
   {
     id: "15",
-    name: "Pinky",
+    name: "Pinky2",
     img: pinky,
     disc: "50",
     price: 14000000,
@@ -212,7 +212,7 @@ export const products = [
   },
   {
     id: "16",
-    name: "Potty",
+    name: "Potty2",
     img: potty,
     disc: "0",
     price: 500000,
@@ -222,7 +222,7 @@ export const products = [
   },
   {
     id: "17",
-    name: "Syltherine",
+    name: "Syltherine3",
     img: syltherine,
     disc: "0",
     price: 3500000,
@@ -232,7 +232,7 @@ export const products = [
   },
   {
     id: "18",
-    name: "Leviosa",
+    name: "Leviosa3",
     img: leviosa,
     disc: "0",
     price: 2500000,
@@ -242,7 +242,7 @@ export const products = [
   },
   {
     id: "19",
-    name: "Lolito",
+    name: "Lolito3",
     img: lolito,
     disc: "50",
     price: 14000000,
@@ -252,7 +252,7 @@ export const products = [
   },
   {
     id: "20",
-    name: "Respira",
+    name: "Respira3",
     img: respira,
     disc: "0",
     price: 500000,
@@ -262,7 +262,7 @@ export const products = [
   },
   {
     id: "21",
-    name: "Grifo",
+    name: "Grifo3",
     img: grifo,
     disc: "0",
     price: 1500000,
@@ -272,7 +272,7 @@ export const products = [
   },
   {
     id: "22",
-    name: "Muggo",
+    name: "Muggo3",
     img: muggo,
     disc: "0",
     price: 150000,
@@ -282,7 +282,7 @@ export const products = [
   },
   {
     id: "23",
-    name: "Pinky",
+    name: "Pinky3",
     img: pinky,
     disc: "50",
     price: 14000000,
@@ -292,7 +292,7 @@ export const products = [
   },
   {
     id: "24",
-    name: "Potty",
+    name: "Potty3",
     img: potty,
     disc: "0",
     price: 500000,
@@ -302,7 +302,7 @@ export const products = [
   },
   {
     id: "25",
-    name: "Syltherine",
+    name: "Syltherine4",
     img: syltherine,
     disc: "0",
     price: 3500000,
@@ -312,7 +312,7 @@ export const products = [
   },
   {
     id: "26",
-    name: "Leviosa",
+    name: "Leviosa4",
     img: leviosa,
     disc: "0",
     price: 2500000,
@@ -322,7 +322,7 @@ export const products = [
   },
   {
     id: "27",
-    name: "Lolito",
+    name: "Lolito4",
     img: lolito,
     disc: "50",
     price: 14000000,
@@ -332,7 +332,7 @@ export const products = [
   },
   {
     id: "28",
-    name: "Respira",
+    name: "Respira4",
     img: respira,
     disc: "0",
     price: 500000,
@@ -342,7 +342,7 @@ export const products = [
   },
   {
     id: "29",
-    name: "Grifo",
+    name: "Grifo4",
     img: grifo,
     disc: "0",
     price: 1500000,
@@ -352,7 +352,7 @@ export const products = [
   },
   {
     id: "30",
-    name: "Muggo",
+    name: "Muggo4",
     img: muggo,
     disc: "0",
     price: 150000,
@@ -362,7 +362,7 @@ export const products = [
   },
   {
     id: "31",
-    name: "Pinky",
+    name: "Pinky4",
     img: pinky,
     disc: "50",
     price: 14000000,
@@ -372,7 +372,7 @@ export const products = [
   },
   {
     id: "32",
-    name: "Potty",
+    name: "Potty4",
     img: potty,
     disc: "0",
     price: 500000,
@@ -382,7 +382,7 @@ export const products = [
   },
   {
     id: "33",
-    name: "Syltherine",
+    name: "Syltherine5",
     img: syltherine,
     disc: "0",
     price: 3500000,
@@ -392,7 +392,7 @@ export const products = [
   },
   {
     id: "34",
-    name: "Leviosa",
+    name: "Leviosa5",
     img: leviosa,
     disc: "0",
     price: 2500000,
@@ -402,7 +402,7 @@ export const products = [
   },
   {
     id: "35",
-    name: "Lolito",
+    name: "Lolito5",
     img: lolito,
     disc: "50",
     price: 14000000,
@@ -412,7 +412,7 @@ export const products = [
   },
   {
     id: "36",
-    name: "Respira",
+    name: "Respira5",
     img: respira,
     disc: "0",
     price: 500000,
@@ -422,7 +422,7 @@ export const products = [
   },
   {
     id: "37",
-    name: "Grifo",
+    name: "Grifo5",
     img: grifo,
     disc: "0",
     price: 1500000,
@@ -432,7 +432,7 @@ export const products = [
   },
   {
     id: "38",
-    name: "Muggo",
+    name: "Muggo5",
     img: muggo,
     disc: "0",
     price: 150000,
@@ -442,7 +442,7 @@ export const products = [
   },
   {
     id: "39",
-    name: "Pinky",
+    name: "Pinky5",
     img: pinky,
     disc: "50",
     price: 14000000,
@@ -452,7 +452,7 @@ export const products = [
   },
   {
     id: "40",
-    name: "Potty",
+    name: "Potty5",
     img: potty,
     disc: "0",
     price: 500000,
@@ -462,7 +462,7 @@ export const products = [
   },
   {
     id: "41",
-    name: "Syltherine",
+    name: "Syltherine6",
     img: syltherine,
     disc: "0",
     price: 3500000,
@@ -472,7 +472,7 @@ export const products = [
   },
   {
     id: "42",
-    name: "Leviosa",
+    name: "Leviosa6",
     img: leviosa,
     disc: "0",
     price: 2500000,
@@ -482,7 +482,7 @@ export const products = [
   },
   {
     id: "43",
-    name: "Lolito",
+    name: "Lolito6",
     img: lolito,
     disc: "50",
     price: 14000000,
@@ -492,7 +492,7 @@ export const products = [
   },
   {
     id: "44",
-    name: "Respira",
+    name: "Respira6",
     img: respira,
     disc: "0",
     price: 500000,
@@ -502,7 +502,7 @@ export const products = [
   },
   {
     id: "45",
-    name: "Grifo",
+    name: "Grifo6",
     img: grifo,
     disc: "0",
     price: 1500000,
@@ -512,7 +512,7 @@ export const products = [
   },
   {
     id: "46",
-    name: "Muggo",
+    name: "Muggo6",
     img: muggo,
     disc: "0",
     price: 150000,
@@ -522,7 +522,7 @@ export const products = [
   },
   {
     id: "47",
-    name: "Pinky",
+    name: "Pinky6",
     img: pinky,
     disc: "50",
     price: 14000000,
@@ -532,7 +532,7 @@ export const products = [
   },
   {
     id: "48",
-    name: "Potty",
+    name: "Potty6",
     img: potty,
     disc: "0",
     price: 500000,
