@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/Meubel-House-Logos-05.png";
 import MenuIcon from "@mui/icons-material/Menu";
-import { navLinks, navMenu } from "../../constant";
-import { useState } from "react";
+import { navLinks } from "../../constant";
+import { useContext, useState } from "react";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -10,6 +10,7 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { AuthContext } from "../../context/authContext";
 
 const Navbar = () => {
   // handle aktif/nonAktif sideMenu
@@ -27,11 +28,14 @@ const Navbar = () => {
   window.addEventListener("resize", function () {
     setSide(false);
   });
-
+  //handle jumlah item di cart
   const cartSum = useSelector((state) => {
     return state.cart.data;
   });
 
+  const user = JSON.parse(window.sessionStorage.getItem("userData"));
+
+  const { logout } = useContext(AuthContext);
   return (
     <nav className="bg-white flex h-[70px] items-center justify-between px-3 md:px-10 z-10">
       <Link to={"/"}>
@@ -49,9 +53,12 @@ const Navbar = () => {
         })}
       </ul>
       <ul className="md:flex hidden lg:w-[200px] md:w-[150px] justify-between items-center font-semibold">
-        <li>
-          <img src={`/icons/user.png`} className=" w-4 h-4" />
-        </li>
+        {user ? (
+          <li onClick={logout}>Logout</li>
+        ) : (
+          <Link to={"/login"}>Login</Link>
+        )}
+
         <li>
           <img src={`/icons/search.png`} className=" w-4 h-4" />
         </li>

@@ -1,11 +1,4 @@
-import {
-  combineReducers,
-  configureStore,
-  createReducer,
-  createSlice,
-} from "@reduxjs/toolkit";
-
-const initialState = [];
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 // reducers
 

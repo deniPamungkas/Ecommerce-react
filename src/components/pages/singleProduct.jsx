@@ -3,7 +3,7 @@ import "../../index.scss";
 import Button from "../atoms/button";
 import CountBtn from "../atoms/countBtn";
 import RelatedProducts from "../organisms/relatedProducts";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { products } from "../../constant";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,7 @@ import { discPrice } from "../../utils/discount";
 
 const SingleProduct = () => {
   const par = useParams();
+  const user = window.sessionStorage.getItem("userData");
   //handle menu description
   const [desc, setDesc] = useState({ active: "Description" });
   const handleChange = (e) => {
@@ -46,18 +47,19 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const handleAddCart = (e) => {
     e.preventDefault();
+    if (user == "null") return (window.location.pathname = "/login");
     if (dat.qty != 0) return dispatch(addToCart(dat));
     return null;
   };
 
-  const cartSum = useSelector((state) => {
-    return state.cart;
-  });
+  // const cartSum = useSelector((state) => {
+  //   return state.cart;
+  // });
 
-  useEffect(() => {
-    window.localStorage.setItem("cart", JSON.stringify(cartSum.data));
-    console.log("update local storage");
-  }, [cartSum]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("cart", JSON.stringify(cartSum.data));
+  //   console.log("update local storage");
+  // }, [cartSum]);
 
   return (
     <section>
