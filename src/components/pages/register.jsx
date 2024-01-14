@@ -32,29 +32,36 @@ const Register = () => {
   const handleChangeForm = (e) => {
     formik.setFieldValue(e.target.name, e.target.value);
   };
-
   //handle hit API register
   const handleRegister = async (e) => {
     e.preventDefault();
-    try {
-      setLoading(true);
-      setErr(null);
-      const response = await axios.post(
-        "http://localhost:5000/auth/signUp",
-        formik.values
-      );
-      toast.success("Berhasil membuat akun !", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-      return response;
-    } catch (error) {
-      setLoading(true);
-      setErr(error.response.data.keyValue);
-      setTimeout(() => {
+    if (
+      formik.errors.email ||
+      formik.errors.username ||
+      formik.errors.password
+    ) {
+      console.log("first");
+    } else {
+      try {
+        setLoading(true);
         setErr(null);
-      }, 100);
-    } finally {
-      setLoading(false);
+        const response = await axios.post(
+          "http://localhost:5000/auth/signUp",
+          formik.values
+        );
+        toast.success("Berhasil membuat akun !", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        return response;
+      } catch (error) {
+        setLoading(true);
+        setErr(error.response.data.keyValue);
+        setTimeout(() => {
+          setErr(null);
+        }, 100);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 

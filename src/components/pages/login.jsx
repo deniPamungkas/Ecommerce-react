@@ -47,7 +47,7 @@ const Login = () => {
         <div className="flex flex-col gap-y-2">
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             placeholder="password"
             id="password"
             name="password"

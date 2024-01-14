@@ -1,23 +1,18 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/Meubel-House-Logos-05.png";
-import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "../../constant";
 import { useContext, useState } from "react";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { AuthContext } from "../../context/authContext";
 
 const Navbar = () => {
   // handle aktif/nonAktif sideMenu
   const [side, setSide] = useState(false);
-  const handleSide = () => {
-    setSide((cur) => !cur);
-  };
+  // const handleSide = () => {
+  //   setSide((cur) => !cur);
+  // };
   // handle scroll off ketika sideMenu aktif
   const scroll = () => {
     if (side) return (document.body.style.overflow = "hidden");
@@ -54,7 +49,9 @@ const Navbar = () => {
       </ul>
       <ul className="md:flex hidden lg:w-[200px] md:w-[150px] justify-between items-center font-semibold">
         {user ? (
-          <li onClick={logout}>Logout</li>
+          <li onClick={logout} className="cursor-pointer">
+            Logout
+          </li>
         ) : (
           <Link to={"/login"}>Login</Link>
         )}
@@ -62,16 +59,47 @@ const Navbar = () => {
         <li>
           <img src={`/icons/search.png`} className=" w-4 h-4" />
         </li>
-        <li>
-          <img src={`/icons/wishlist.png`} className=" w-4 h-4" />
-        </li>
+        {user ? (
+          <li>
+            <img src={`/images/avatar.png`} className=" w-6 h-6" />
+          </li>
+        ) : (
+          <li>
+            <img src={`/images/userImg.png`} className=" w-6 h-6" />
+          </li>
+        )}
         <Link to={"/cart"}>
           <Badge badgeContent={cartSum?.length} color="success" size="small">
             <img src={`/icons/cart.png`} className=" w-4 h-4" />
           </Badge>
         </Link>
       </ul>
-      <span className="block md:hidden" onClick={handleSide}>
+      <ul className="flex md:hidden gap-x-4 px-2">
+        {user ? (
+          <li onClick={logout} className="cursor-pointer text-sm">
+            Logout
+          </li>
+        ) : (
+          <Link to={"/login"} className="text-sm">
+            Login
+          </Link>
+        )}
+        {user ? (
+          <li>
+            <img src={`/images/avatar.png`} className=" w-6 h-6" />
+          </li>
+        ) : (
+          <li>
+            <img src={`/images/userImg.png`} className=" w-6 h-6" />
+          </li>
+        )}
+        <Link to={"/cart"}>
+          <Badge badgeContent={cartSum?.length} color="success" size="small">
+            <ShoppingCartOutlinedIcon />
+          </Badge>
+        </Link>
+      </ul>
+      {/* <span className="block md:hidden" onClick={handleSide}>
         <MenuIcon />
       </span>
       <div
@@ -84,8 +112,8 @@ const Navbar = () => {
           onClick={handleSide}
         >
           x
-        </div>
-        <ul className=" w-full h-[350px] mt-24 flex flex-col gap-y-5 px-3">
+        </div> */}
+      {/* <ul className=" w-full h-[350px] mt-24 flex flex-col gap-y-5 px-3">
           {navLinks.map((item) => {
             return (
               <Link to={item.dest} key={item.id}>
@@ -117,8 +145,8 @@ const Navbar = () => {
               Cart
             </li>
           </Link>
-        </ul>
-      </div>
+        </ul> */}
+      {/* </div> */}
     </nav>
   );
 };

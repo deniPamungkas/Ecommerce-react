@@ -3,10 +3,10 @@ import "../../index.scss";
 import Button from "../atoms/button";
 import CountBtn from "../atoms/countBtn";
 import RelatedProducts from "../organisms/relatedProducts";
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { products } from "../../constant";
 import { useParams } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cartSlice";
 import { discPrice } from "../../utils/discount";
 
@@ -39,11 +39,10 @@ const SingleProduct = () => {
       setDat({ ...dat, [e.target.name]: e.target.value });
     }
   };
-  // window.localStorage.removeItem("cart");
+  window.localStorage.removeItem("cart");
   const itemQty = (e) => {
     setDat({ ...dat, ["qty"]: e });
   };
-
   const dispatch = useDispatch();
   const handleAddCart = (e) => {
     e.preventDefault();
