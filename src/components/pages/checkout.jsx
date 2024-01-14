@@ -246,7 +246,7 @@ const Checkout = () => {
   } else {
     return (
       <section>
-        <div className=" w-full h-[500px] flex justify-center items-center">
+        <div className=" w-full min-h-[500px] flex justify-center items-center">
           <div className="flex flex-col gap-y-3 items-center">
             <img
               src={`/images/cart.png`}

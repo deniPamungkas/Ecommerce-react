@@ -69,7 +69,7 @@ const cartSlice = createSlice({
         }
       }
     },
-    clearCart: (state) => {
+    clearCart: async (state) => {
       const clear = async () => {
         const response = await axios.get(
           "http://localhost:5000/cart/clearCart",
