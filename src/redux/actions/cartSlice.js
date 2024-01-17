@@ -1,21 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+
+export const fetchFromDatabase = createAsyncThunk("data", async () => {
+  const response = await axios.get("http://localhost:5000/cart/getAllCart", {
+    withCredentials: true,
+  });
+  return response.data;
+});
+
+const initialState = {
+  data: [],
+  loading: false,
+  error: null,
+};
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    data:
-      (await axios
-        .get("http://localhost:5000/cart/getAllCart", {
-          withCredentials: true,
-        })
-        .then((items) => {
-          return items.data;
-        })
-        .catch((err) => {
-          return err;
-        })) || [],
-  },
+  initialState,
   reducers: {
     addToCart: (state, action) => {
       const { id, qty } = action.payload;
@@ -69,7 +70,7 @@ const cartSlice = createSlice({
         }
       }
     },
-    clearCart: async (state) => {
+    clearCart: (state) => {
       const clear = async () => {
         const response = await axios.get(
           "http://localhost:5000/cart/clearCart",
@@ -80,6 +81,20 @@ const cartSlice = createSlice({
       clear();
       return { ...state, data: [] };
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchFromDatabase.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchFromDatabase.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data = action.payload;
+      })
+      .addCase(fetchFromDatabase.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
   },
 });
 
