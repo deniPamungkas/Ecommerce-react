@@ -4,13 +4,13 @@ import Button from "../atoms/button";
 import { Link } from "react-router-dom";
 
 const OurProducts = () => {
-  const example = products.slice(1, 9);
+  const example = products.slice(1, 11);
   return (
     <section className="px-3 md:px-16 w-full h-fit py-8">
       <h1 className="font-bold text-xl md:text-2xl text-center mb-7">
         Our Products
       </h1>
-      <ul className="w-full flex flex-wrap gap-2">
+      <ul className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2">
         {example.map((item) => {
           return <Card key={item.id} data={item} />;
         })}

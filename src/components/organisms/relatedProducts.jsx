@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const RelatedProducts = () => {
   const par = useParams();
-  const [itemShow, setItemShow] = useState(9);
+  const [itemShow, setItemShow] = useState(11);
   const datum = products.filter((item) => {
     return item.id == par.id;
   });
@@ -17,14 +17,14 @@ const RelatedProducts = () => {
     })
     .slice(1, itemShow);
   const handleShowMore = () => {
-    setItemShow(itemShow + 8);
+    setItemShow(itemShow + 10);
   };
   return (
     <section className="px-3 md:px-16 w-full h-fit py-12">
       <h1 className="font-bold text-xl md:text-2xl lg:text-3xl text-center mb-7">
         Related Products
       </h1>
-      <ul className="w-full flex flex-wrap gap-2">
+      <ul className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2">
         {relatedData.map((item) => {
           return <Card key={item.id} data={item} />;
         })}
