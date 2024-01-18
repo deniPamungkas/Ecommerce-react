@@ -46,7 +46,7 @@ const Register = () => {
         setLoading(true);
         setErr(null);
         const response = await axios.post(
-          "http://localhost:5000/auth/signUp",
+          "https://ecommerce-react-api-amber.vercel.app/auth/signUp",
           formik.values
         );
         toast.success("Berhasil membuat akun !", {

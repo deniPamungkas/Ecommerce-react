@@ -2,9 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchFromDatabase = createAsyncThunk("data", async () => {
-  const response = await axios.get("http://localhost:5000/cart/getAllCart", {
-    withCredentials: true,
-  });
+  const response = await axios.get(
+    "https://ecommerce-react-api-amber.vercel.app/cart/getAllCart",
+    {
+      withCredentials: true,
+    }
+  );
   return response.data;
 });
 
@@ -23,7 +26,7 @@ const cartSlice = createSlice({
       //function handle addCart to database
       const add = async () => {
         await axios.post(
-          "http://localhost:5000/cart/addCart/" + id,
+          "https://ecommerce-react-api-amber.vercel.app/cart/addCart/" + id,
           action.payload,
           {
             withCredentials: true,
@@ -50,7 +53,7 @@ const cartSlice = createSlice({
       const { id } = action.payload;
       const remove = async () => {
         const response = await axios.post(
-          "http://localhost:5000/cart/removeFromCart",
+          "https://ecommerce-react-api-amber.vercel.app/cart/removeFromCart",
           action.payload,
           { withCredentials: true }
         );
@@ -73,7 +76,7 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       const clear = async () => {
         const response = await axios.get(
-          "http://localhost:5000/cart/clearCart",
+          "https://ecommerce-react-api-amber.vercel.app/cart/clearCart",
           { withCredentials: true }
         );
         return response;

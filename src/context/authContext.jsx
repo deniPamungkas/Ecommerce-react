@@ -17,9 +17,13 @@ const AuthContextComp = (props) => {
   const login = async (e) => {
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:5000/auth/login", e, {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        "https://ecommerce-react-api-amber.vercel.app/auth/login",
+        e,
+        {
+          withCredentials: true,
+        }
+      );
       setUserData(response.data);
       window.location.pathname = "/";
       setErr(null);
@@ -38,9 +42,12 @@ const AuthContextComp = (props) => {
   const logout = async () => {
     window.sessionStorage.removeItem("userData");
     try {
-      const response = await axios.get("http://localhost:5000/auth/logout", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://ecommerce-react-api-amber.vercel.app/auth/logout",
+        {
+          withCredentials: true,
+        }
+      );
       window.location.reload();
       return response;
     } catch (error) {

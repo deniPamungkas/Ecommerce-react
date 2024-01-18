@@ -103,7 +103,12 @@ const Cart = () => {
                               className="w-20 h-20 rounded-lg"
                             />
                           </td>
-                          <td>{item.name}</td>
+                          <td>
+                            {item.name}{" "}
+                            <span className="text-xs">
+                              {`(${item.color}, ${item.size})`}
+                            </span>
+                          </td>
                           <td>{`Rp.${new Intl.NumberFormat("en-US").format(
                             discPrice(item.disc, item.price)
                           )}`}</td>

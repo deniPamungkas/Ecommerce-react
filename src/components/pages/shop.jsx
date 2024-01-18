@@ -252,7 +252,7 @@ const Shop = () => {
           </span>
         </div>
       </div>
-      <ul className="w-full flex flex-wrap gap-2 my-3 md:my-10 px-3 md:px-16">
+      <ul className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2 my-3 md:my-10 px-3 md:px-16">
         {paginatedData.map((item) => {
           return <Card key={item.id} data={item} />;
         })}

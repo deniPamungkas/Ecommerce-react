@@ -8,7 +8,7 @@ const Card = (props) => {
   return (
     <div
       id={props.data.id}
-      className="flex-1 min-w-[125px] max-w-[200px] md:min-w-[150px] md:max-w-[225px] lg:min-w-[175px] lg:max-w-[250px] xl:min-w-[275px] xl:max-w-[350px] shrink-0 relative"
+      className="flex-1 min-w-[125px] max-w-[200px] md:min-w-[150px] md:max-w-[225px] lg:min-w-[175px] lg:max-w-[250px] xl:min-w-[250px] xl:max-w-[350px] shrink-0 relative"
       onClick={handleClick}
     >
       <img
