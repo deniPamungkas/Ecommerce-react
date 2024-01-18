@@ -2202,6 +2202,10 @@ video {
     max-width: 350px;
   }
 
+  .xl\:max-w-\[300px\] {
+    max-width: 300px;
+  }
+
   .xl\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
