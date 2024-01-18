@@ -189,7 +189,7 @@ const Shop = () => {
             <img
               src={sequence}
               alt="icon"
-              className="w-2 h-2 md:w-4 md:h-4"
+              className="w-2 h-2 md:w-4 md:h-4 cursor-pointer"
               onClick={handleReverse}
             />
             <img src={line} alt="icon" className="h-4 md:h-6 text-black" />
